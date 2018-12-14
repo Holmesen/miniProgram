@@ -1,0 +1,129 @@
+.view{
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  width: 100%;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.dishView{
+  width: 670rpx;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  margin: 20rpx auto;
+  align-content: center;
+  border: solid 1px #aaaaaa;
+  border-radius: 30rpx;
+  -moz-box-shadow:2px 2px 3px #cccccc;
+  -webkit-box-shadow:2px 2px 3px #cccccc; 
+  box-shadow:2px 2px 3px #cccccc;
+}
+.dishImg{
+  height: 400rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+}
+.dishImg>image{
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.dishInfo{
+  height: auto;
+  width: 93%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  padding: 0 20rpx 20rpx 20rpx;
+}
+/* .dishInfo>text{
+  font-size: 38rpx;
+  font-weight: bold;
+  margin: 20rpx auto 10rpx 14rpx;
+  line-height: 40rpx;
+} */
+.info1{
+  height: auto;
+  width: 97%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  /* padding: 0 30rpx; */
+  align-content: center;
+  margin: 20rpx auto 0 auto;
+}
+.info1L,.info1R{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  /* margin: auto auto auto 0; */
+}
+.info1L>image{
+  height: 40rpx;
+  width: 40rpx;
+  margin: auto 14rpx auto 0;
+}
+.info1R>button{
+  width:180rpx;
+  height:70rpx;
+  font-size:30rpx;
+  line-height:70rpx;
+  border-radius:100px;
+}
+.info1L>text,.info1R>text{
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin: auto 0 auto 4rpx;
+  color: #aaaaaa;
+}
+.info2{
+  height: auto;
+  width: 97%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  /* padding: 0 30rpx; */
+  align-content: center;
+  margin: 20rpx auto 0 auto;
+}
+.info2R{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: auto 0 auto auto;
+}
+.info2R>image{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 100rpx;
+  margin: auto 14rpx auto 0;
+}
+.info2R>text{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  margin: auto 0 auto 14rpx;
+}
+.dishName{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+.dishName>text{
+  font-size: 38rpx;
+  line-height: 40rpx;
+  margin: auto 0;
+  font-weight: bold;
+  /* margin: 20rpx auto 10rpx 14rpx; */
+}

@@ -1,0 +1,107 @@
+/* pages/preInfo/preInfo.wxss */
+.infoView{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+}
+.avatar_url{
+  height: auto;
+  width: 92%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 20rpx auto;
+  padding: 14rpx 30rpx;
+  justify-content: space-between;
+  border-bottom: solid 1px #ddd;
+}
+.avatar_url>view{
+  display: flex;
+  flex-flow: row;
+  width: auto;
+  height: auto;
+}
+.avatar_url>view>text{
+  width: auto;
+  font-size: 34rpx;
+  line-height: 40rpx;
+  margin: auto 0;
+  font-weight: bold;
+}
+.avatar_url>view>image{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100px;
+  margin: auto auto auto 30rpx;
+}
+.avatar_url>text{
+  font-size: 30rpx;
+  color: #aaa;
+  line-height: 40rpx;
+  margin: auto 0 auto auto;
+  width: auto;
+}
+
+.name,.sex,.country,.province,.city,.introduction{
+  height: auto;
+  width: 92%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 20rpx auto;
+  padding: 14rpx 30rpx;
+  border-bottom: solid 1px #ddd;
+}
+.txt1{
+  width: auto;
+  font-size: 34rpx;
+  line-height: 40rpx;
+  margin: 0;
+  font-weight: bold;
+  word-break: keep-all;
+}
+.txt2{
+  width: auto;
+  font-size: 34rpx;
+  line-height: 40rpx;
+  margin: 0 20rpx;
+}
+.introduction{
+  height: 200rpx;
+  width: 92%;
+  flex-grow: 1;
+}
+.btn{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+.updateBtn,.saveBtn{
+  height: 70rpx;
+  width: 180rpx;
+  text-align: center;
+  line-height: 70rpx;
+  margin: auto;
+  font-size: 30rpx;
+}
+.introduction>textarea{
+  height: 95%;
+  width: auto;
+  flex-grow: 1;
+  border: solid 1px #ddd;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+}
+.name>input{
+  width: 400rpx;
+  height: 50rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  border-bottom: solid 1px #aaa;
+}

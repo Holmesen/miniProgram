@@ -1,0 +1,176 @@
+/* pages/category/category.wxss */
+.search{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin-top: 26rpx;
+}
+.searchView{
+  height: 60rpx;
+  width: 88%;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+  border: solid 1px #ffa55a;
+  border-radius: 100rpx;
+  justify-content: space-between;
+}
+.searchView>input{
+  height: 100%;
+  width: 85%;
+  margin: auto 16rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  padding-left: 10rpx;
+}
+.category{
+  width: 94%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 0 auto 30rpx auto;
+}
+.menu{
+  width: 30%;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+  align-content: center;
+}
+.menuView{
+  height: 100rpx;
+  width: 98%;
+  margin: 0 0 0 2%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  border-left: solid 2px #a65353;
+  color: #a65353;
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+.menuView>text{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin: auto;
+}
+.menuView0{
+  height: 100rpx;
+  width: 95%;
+  margin: 0 0 0 5%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  /* border-left: solid 2px #a65353; */
+  color: #a78569;
+  background-color: white;
+}
+.menuView0>text{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin: auto;
+}
+.cuisine{
+  display: flex;
+  flex-flow: row;
+  width: 70%;
+  height: auto;
+  min-height: 950rpx;
+  margin: 0;
+  flex-wrap: wrap;
+  float: left;
+  background-color: #f8f8f8;
+  padding: 10rpx 0 10rpx 30rpx;
+}
+.cuisineView{
+  height: 40rpx;
+  width: auto;
+  float: left;
+  display: flex;
+  flex-flow: row;
+  padding: 12rpx 30rpx;
+  margin: 20rpx 16rpx;
+  background-color: #ffaa83;
+  color: white;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  border-radius: 100rpx;
+}
+.topCategory{
+  height: auto;
+  width: 93%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 20rpx auto 0rpx auto;
+}
+.cateIngre,.cateCuisine{
+  height: 80rpx;
+  width: 50%;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+  color: #a78569cb;
+  background-color: white;
+  font-size: 26rpx;
+  border: solid 1px #a78569cb;
+}
+.cateIngre>image{
+  height: 50rpx;
+  width: 50rpx;
+  margin: auto 10rpx auto auto;
+}
+.cateIngre>text,.cateCuisine>text,.currCate>text{
+  font-size: 30rpx;
+  line-height: 80rpx;
+  margin: auto;
+}
+.cateCuisine>image{
+  height: 50rpx;
+  width: 50rpx;
+  margin: auto auto auto 10rpx;
+}
+.currCate{
+  height: 80rpx;
+  width: 50%;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+  font-size: 26rpx;
+  border: solid 1px #a78569cb;
+  color: white;
+  background-color: #a78569cb;
+  font-weight: bold;
+  /* animation: myfirst 1s; */
+  /* animation-direction: reverse; */
+  /* animation-iteration-count: infinite; */
+  /* transition: width 0.8s 0s ease-in; */
+  /* font-size: 36rpx; */
+}
+/* 动画 */
+/* @keyframes myfirst
+{
+    0%   {width: 352rpx;}
+    5%   {width: 362rpx;}
+    10%   {width: 372rpx;}
+    15%   {width: 382rpx;}
+    20%   {width: 392rpx;}
+    25%  {width: 402rpx;}
+    30%   {width: 412rpx;}
+    35%   {width: 422rpx;}
+    40%   {width: 432rpx;}
+    45%   {width: 442rpx;}
+    50%  {width: 452rpx;}
+    55%   {width: 462rpx;}
+    60%   {width: 472rpx;}
+    65%   {width: 482rpx;}
+    70%   {width: 492rpx;}
+    75%  {width: 502rpx;}
+    80%   {width: 512rpx;}
+    85%   {width: 522rpx;}
+    90%   {width: 532rpx;}
+    95%   {width: 542rpx;}
+    100% {width: 552rpx;}
+} */

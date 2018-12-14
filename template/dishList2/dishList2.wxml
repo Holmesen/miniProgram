@@ -1,0 +1,25 @@
+<template name='dishList2'>
+<view class='view'>
+  <view class='dishView' wx:for='{{dishList}}' data-idx='{{index}}' data-id='{{item.ID}}'>
+    <view class='dishImg' bindtap='to_dishInfo' data-idx='{{index}}' data-id='{{item.ID}}'>
+      <image src='{{item.img_src}}' data-idx='{{index}}' data-id='{{item.ID}}'></image>
+    </view>
+    <view class='dishInfo'>
+      <view class='info2' data-idx='{{index}}' data-id='{{item.ID}}'>
+        <view bindtap='to_dishInfo' class='dishName' data-idx='{{index}}' data-id='{{item.ID}}'>
+          <text data-idx='{{index}}' data-id='{{item.ID}}'>{{item.name}}</text>
+        </view>
+        <view class='info1R' style='margin: auto 0 auto auto;'>
+          <button wx:if='{{type=="manager"}}' type='primary' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='managerDish'>管理菜品</button>
+          <button wx:if='{{type=="collect"}}' type='warn' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='cancelCollect'>取消收藏</button>
+        </view>
+      </view>
+      <view class='info1' data-idx='{{index}}' data-id='{{item.ID}}'>
+        <view class='info1L' style='margin: auto auto auto 0;'>
+          <text>该菜品{{type=='manager'?'上传':'收藏'}}于——{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</template>

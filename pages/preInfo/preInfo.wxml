@@ -1,0 +1,64 @@
+<view class='infoView'>
+  <view class='avatar_url'>
+    <view>
+      <text>头像：</text>
+      <image src='{{tempImgSrc}}'></image>
+    </view>
+    <!-- <text hidden='{{!isUpdate}}' bindtap='changeImg'>更换头像</text> -->
+  </view>
+  <view class='name'>
+    <text class='txt1'>昵称：</text>
+    <text hidden='{{isUpdate}}' class='txt2'>{{userInfo.name}}</text>
+    <input hidden='{{!isUpdate}}' value='{{userInfo.name}}' bindinput='inputName'></input>
+  </view>
+  <view class='sex'>
+    <text class='txt1'>性别：</text>
+    <text hidden='{{isUpdate}}' class='txt2'>{{userInfo.sex}}</text>
+    <picker disabled='{{!isUpdate}}' bindchange="changePicker" data-type='sex' value="{{index}}" range="{{sexList}}">
+      <view class="picker" hidden='{{!isUpdate}}'>
+        <text style='font-size:30rpx;line-height:40rpx;'>{{sexList[sexIdx]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='country'>
+    <text class='txt1'>国家：</text>
+    <text hidden='{{isUpdate}}' class='txt2'>{{userInfo.country}}</text>
+    <picker disabled='{{!isUpdate}}' bindchange="changePicker" data-type='country' value="{{index}}" range="{{country}}">
+      <view class="picker" hidden='{{!isUpdate}}'>
+        <text style='font-size:30rpx;line-height:40rpx;'>{{country[0]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='province'>
+    <text class='txt1'>省份：</text>
+    <text hidden='{{isUpdate}}' class='txt2'>{{userInfo.province}}</text>
+    <picker disabled='{{!isUpdate}}' bindchange="changePicker" data-type='province' value="{{index}}" range="{{provinceCN}}">
+      <view class="picker" hidden='{{!isUpdate}}'>
+        <text style='font-size:30rpx;line-height:40rpx;'>{{provinceCN[provinceIdx]}}</text>
+      </view>
+    </picker>
+    <!-- <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker> -->
+  </view>
+  <view class='city'>
+    <text class='txt1'>城市：</text>
+    <text hidden='{{isUpdate}}' class='txt2'>{{userInfo.city}}</text>
+    <picker disabled='{{!isUpdate}}' bindchange="changePicker" data-type='city' value="{{index}}" range="{{cityCN}}">
+      <view class="picker" hidden='{{!isUpdate}}'>
+        <text style='font-size:30rpx;line-height:40rpx;'>{{cityCN[cityIdx]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='introduction'>
+    <text class='txt1'>个人简介：</text>
+    <text hidden='{{isUpdate}}' class='txt2'>{{introduction||'来介绍一下自己呗~~'}}</text>
+    <textarea hidden='{{!isUpdate}}' placeholder='介绍一下自己呗~~' value='{{introduction}}' bindinput='inputIntroduction'></textarea>
+  </view>
+</view>
+<view class='btn'>
+  <button class='updateBtn' bindtap='updateInfo'>{{isUpdate?'取消修改':'修改信息'}}</button>
+  <button class='saveBtn' bindtap='saveInfo' type='primary' hidden='{{!isUpdate}}'>保存信息</button>
+</view>

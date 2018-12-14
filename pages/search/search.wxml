@@ -1,0 +1,28 @@
+<view class='search'>
+  <view class='searchView'>
+    <input placeholder='请输入要查找的菜品名' value='{{keyName}}' bindinput='inputName'></input>
+    <icon type='search' color='#ffa55a' size='20' style='margin: auto 16rpx;' bindtap='search'></icon>
+  </view>
+</view>
+<view style='height: 100rpx;width: 100%;'></view>
+<view class='hot-search'>
+  <text class='hot-title'>热门搜索：</text>
+  <text class='hot-dishname' wx:for='{{["红烧肉","麻辣香锅","水煮鱼","北京烤鸭"]}}'  data-name='{{item}}' bindtap='clickHis'>{{item}}</text>
+</view>
+<view class='history'>
+  <text>搜索历史：</text>
+  <view wx:for='{{history}}' data-name='{{item}}' bindtap='clickHis'>
+    <text data-name='{{item}}'>{{item}}</text>
+  </view>
+</view>
+<view class='clearHistory' bindtap='clearHistory'><text>清空搜索历史</text></view>
+<view class='title' hidden='{{showIngreList.length==0}}'><text>相关食材：</text></view>
+<import src='../../template/ingreList/ingreList.wxml'/>
+<view style='height: auto;width: 100%;'>
+  <template is='ingreList' data='{{showIngreList,isfold}}'/>
+</view>
+<view class='title' hidden='{{showDishList==0}}'><text>相关菜品：</text></view>
+<import src='../../template/dishList/dishList.wxml'/>
+<view style='height: auto;width: 100%;'>
+  <template is='dishList' data='{{showDishList}}'/>
+</view>

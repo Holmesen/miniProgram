@@ -1,0 +1,57 @@
+<view>
+  <view class='head-view'>
+    <button wx:if="{{userInfo==null}}" class='login' open-type='getUserInfo' bindgetuserinfo='get_user_info'>登录</button>
+    <view class='info' hidden="{{userInfo==null}}">
+      <image class='login' src='{{userInfo.avatarUrl||userInfo.avatar_url}}'></image>
+      <text class='name'>{{userInfo.nickName||userInfo.name}}</text>
+    </view>
+  </view>
+</view>
+<view class='func-view'>
+  <view class='func'>
+
+    <view class='func1' bindtap='personalInfo'>
+      <view>
+        <image src='../../images/perInfo.png'></image>
+        <text>个人信息</text>
+      </view>
+      <image class='right-image' src='/images/angle-right.png'></image>
+    </view>
+
+    <view class='func2' bindtap='collectDish'>
+      <view>
+        <image src='../../images/star_fill.png'></image>
+        <text>收藏菜品</text>
+      </view>
+      <image class='right-image' src='/images/angle-right.png'></image>
+    </view>
+
+    <view class='func3' bindtap='manageDish'>
+      <view>
+        <image src='../../images/manage.png'></image>
+        <text>管理菜品</text>
+      </view>
+      <image class='right-image' src='/images/angle-right.png'></image>
+    </view>
+
+    <view class='func4' bindtap='tool'>
+      <view>
+        <image src='../../images/tool.png'></image>
+        <text>小工具</text>
+      </view>
+      <image class='right-image' src='/images/angle-right.png'></image>
+    </view>
+
+    <!-- <view class='func5' bindtap='feedback'>
+      <view>
+        <image src='../../images/feedback.png'></image>
+        <text>意见反馈</text>
+      </view>
+      <image class='right-image' src='/images/angle-right.png'></image>
+    </view> -->
+
+  </view>
+</view>
+<view class='feedback'>
+  <button class='feedbackBtn' open-type='feedback'>意见反馈</button>
+</view>

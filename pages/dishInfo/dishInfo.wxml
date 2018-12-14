@@ -1,0 +1,126 @@
+<view class='topView'>
+  <image class='dishImg' src='{{mainPic}}'></image>
+  <text class='dishName'>{{dishName}}</text>
+  <view class='num'>
+    <view class='viewNum'>
+      <image src='../../images/view.png'></image>
+      <text>{{viewCount}}</text>
+    </view>
+    <view class='collectNum'>
+      <image src='../../images/collect0.png'></image>
+      <text>{{collectCount}}</text>
+    </view>
+    <view class='date'>
+      <image src='../../images/date.png'></image>
+      <text>{{date}}</text>
+    </view>
+  </view>
+  <view class='author'>
+    <image class='authorImg' src='{{authorImg}}'></image>
+    <text class='authorName'>{{authorName}}</text>
+  </view>
+</view>
+<view wx:if='{{description&&description!=""}}' class='discription'>
+  <text space='emsp' decode='true'>  {{description}}</text>
+</view>
+<view class='dishInfo'>
+  <view>
+    <view class='crafts'>
+      <image src='../../images/pot.png'></image>
+      <text>{{process||'工艺'}}</text>
+    </view>
+    <view class='difficult'>
+      <image src='../../images/difficult.png'></image>
+      <text>{{difficult||'难度'}}</text>
+    </view>
+    <view class='taste'>
+      <image src='../../images/taste.png'></image>
+      <text>{{taste||'口味'}}</text>
+    </view>
+    <view class='cookie'>
+      <image src='../../images/cookie.png'></image>
+      <text>{{cookingT||'烹饪时间'}}</text>
+    </view>
+  </view>
+  <view>
+    <view class='prepare'>
+      <image src='../../images/prepare.png'></image>
+      <text>{{prepareT||'准备时间'}}</text>
+    </view>
+    <view class='component'>
+      <image src='../../images/component.png'></image>
+      <text>{{component||'份量'}}</text>
+    </view>
+    <view class='menu'>
+      <image src='../../images/menu.png'></image>
+      <text>{{menu||'菜系'}}</text>
+    </view>
+    <view class='cuisine'>
+      <image src='../../images/cuisine.png'></image>
+      <text>{{cuisine||'类别'}}</text>
+    </view>
+  </view>
+</view>
+<view class='features'>
+  <view wx:for='{{features}}'>
+    <text>{{item}}</text>
+  </view>
+</view>
+<view class='shicaiTop'>
+  <text>------食材明细------</text>
+</view>
+<view class='shicai'>
+  <view class='zhuliao'>
+    <text>主料：</text>
+    <view wx:for='{{zhuliao}}'>
+      <text>{{item.zhuLiaoName}}</text>
+      <text>{{item.zhuLiaoWeight}}</text>
+    </view>
+  </view>
+  <view class='fuliao'>
+    <text>辅料：</text>
+    <view wx:for='{{fuliao}}'>
+      <text>{{item.fuliaoName}}</text>
+      <text>{{item.fuliaoWeight}}</text>
+    </view>
+  </view>
+  <view class='tiaoliao'>
+    <text>调料：</text>
+    <view wx:for='{{tiaoliao}}'>
+      <text>{{item.tiaoliaoName}}</text>
+      <text>{{item.tiaoliaoWeight}}</text>
+    </view>
+  </view>
+</view>
+<view class='stepTop'>
+  <text>------制作步骤------</text>
+</view>
+<view class='step'>
+  <view class='stepView' wx:for='{{stepList}}'>
+    <text><text style='font-weight:bold;line-height:40rpx;font-style:italic;font-size:34rpx;'>步骤{{index+1}}：</text>{{item.newStepText||item.stepText}}</text>
+    <image wx:if='{{item.newStepImgSrc||item.stepImg}}' src='{{item.newStepImgSrc||item.stepImg}}' bindtap='viewBigPic' data-imgsrc='{{item.newStepImgSrc||item.stepImg}}'></image>
+  </view>
+</view>
+<view class='recommendTop'>
+  <text>------推荐菜品------</text>
+</view>
+<view class='recommend'>
+  <view class='recommendView' wx:for='{{sameDishList}}' wx:if='{{item.ID!=dishID&&index<4}}' data-id='{{item.ID}}' data-idx='{{index}}' bindtap='to_dishInfo'>
+    <image src='{{item.img_src}}' data-id='{{item.ID}}' data-idx='{{index}}'></image>
+    <text data-id='{{item.ID}}' data-idx='{{index}}'>{{item.name}}</text>
+  </view>
+</view>
+<view class='operate'>
+  <view class='zan'>
+    <image bindtap='operate' data-tag='zan' src='../../images/zan{{zan?"1":"0"}}.png'></image>
+    <text>{{likeCount}}</text>
+  </view>
+  <view class='collect'>
+    <image bindtap='operate' data-tag='collect' src='../../images/collect{{collect?"1":"0"}}.png'></image>
+    <text>{{collectCount}}</text>
+  </view>
+  <view class='cai'>
+    <image bindtap='operate' data-tag='cai' src='../../images/cai{{cai?"1":"0"}}.png'></image>
+    <text>{{unlikeCount}}</text>
+  </view>
+</view>

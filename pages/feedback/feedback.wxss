@@ -1,0 +1,111 @@
+/* pages/feedback/feedback.wxss */
+.top{
+  height:100rpx;
+  width:100%;
+  text-align:center;
+  background-color:#ffa55a;
+  font-size: 34rpx;
+}
+.top>text{
+  font-size: 36rpx;
+  line-height: 100rpx;
+  color: white;
+}
+.contact,.title,.content,.btn{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin-top: 30rpx;
+}
+.contact text,.content text{
+  line-height: 40rpx;
+  font-size: 32rpx;
+  margin: auto 0;
+}
+.title text{
+  line-height: 40rpx;
+  font-size: 32rpx;
+  margin: auto 40rpx;
+}
+.important{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+.important>image{
+  height: 20rpx;
+  width: 20rpx;
+  margin: auto 10rpx;
+}
+.contact>input,.title>input{
+  width: 90%;
+  margin: 20rpx auto;
+  padding-left: 10rpx;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  /* border: solid 1px #aaa; */
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 5px;
+  -moz-box-shadow:0px 1px 2px #555;
+  -webkit-box-shadow:0px 1px 2px #555; 
+  box-shadow:0px 1px 2px #555;
+}
+.content>textarea{
+  height: 300rpx;
+  width: 90%;
+  /* border: solid 1px black; */
+  font-size: 32rpx;
+  margin: 20rpx auto;
+  padding-left: 10rpx;
+  line-height: 70rpx;
+  padding-top: 10rpx;
+  border-radius: 5px;
+  -moz-box-shadow:0px 1px 2px #555;
+  -webkit-box-shadow:0px 1px 2px #555; 
+  box-shadow:0px 1px 2px #555;
+  word-wrap: break-word;
+}
+.btn>button{
+  width:200rpx;
+  font-size:34rpx;
+  margin:auto;
+  height:80rpx;
+  line-height:80rpx;
+  background-color: #ffa55a;
+  color: white;
+  -moz-box-shadow:0px 1px 2px #555;
+  -webkit-box-shadow:0px 1px 2px #555; 
+  box-shadow:0px 1px 2px #555;
+}
+.callphone{
+  height: auto;
+  width: 100%;
+  position: absolute;
+  bottom: 30rpx;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin-top: 20rpx;
+}
+.callphone>view{
+  width: auto;
+  padding: 0 20rpx;
+  margin: auto;
+  height: 50rpx;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  /* left: 10rpx; */
+  text-decoration: underline;
+  font-weight: bold;
+  color: #81b3d5;
+}
+.callphone>view>image{
+  height: 36rpx;
+  width: 36rpx;
+  margin-left: 10rpx;
+}

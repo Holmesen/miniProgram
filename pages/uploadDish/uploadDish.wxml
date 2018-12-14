@@ -1,0 +1,189 @@
+<view wx:if='{{userInfo&&userInfo!=null}}' style='height:auto;width:auto;align-content: center;'>
+  <view class='topview'>
+    <view class='topview-left'>
+      <view class='dishName'>
+        <text decode='true' space='ensp'>菜 品 名：</text>
+        <input bindinput='inputValue' data-type='dishName'></input>
+      </view>
+      <view class='dishTaste'>
+        <text decode='true' space='ensp'>口味：</text>
+        <picker bindchange="selectTaste" value="{{index}}" range="{{tasteList}}">
+          <view class="picker">
+            <text style='font-size:28rpx;color:#ffa55a;line-height:50rpx;'>{{taste==""?"选择口味":taste}}</text>
+          </view>
+        </picker>
+
+        <view class='process'>
+          <text>工艺：</text>
+          <picker bindchange="selectProcess" value="{{index}}" range="{{processList}}">
+            <view class="picker">
+              <text style='font-size:28rpx;color:#ffa55a;line-height:50rpx;'>{{process==""?"选择工艺":process}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='dishMenu'>
+        <text decode='true' space='ensp'>菜    系：</text>
+        <view class='menuView'>
+          <picker bindchange="selectMenu" value="{{index}}" range="{{menu}}">
+            <view class="picker">
+              <text style='font-size:28rpx;color:#ffa55a;line-height:50rpx;'>{{menu_curr==""?"选择菜系":menu_curr}}</text>
+            </view>
+          </picker>
+          <picker bindchange="selectCuisine" value="{{index}}" range="{{cuisine}}">
+            <view class="picker">
+              <text style='font-size:28rpx;color:#ffa55a;line-height:50rpx;'>{{cuisine_curr==""?"选择子菜系":cuisine_curr}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class='topview-right'>
+      <!-- <image bindtap='chooseMainPic' src='{{mainPic!=""?mainPic:"../../images/addPicture.png"}}'></image> -->
+    </view>
+  </view>
+
+  <view class='middleView'>
+    <view class='features'>
+      <text decode='true' space='ensp'>功    效：</text>
+      <input bindinput='inputValue' data-type='features' placeholder='格式：功效1,功效2,...'></input>
+    </view>
+    <view class='time'>
+      <view class='prepareT'>
+        <text>准备时长：</text>
+        <input bindinput='inputValue' data-type='prepareT'></input>
+      </view>
+      <view class='cookingT'>
+        <text>烹饪时长：</text>
+        <input bindinput='inputValue' data-type='cookingT'></input>
+      </view>
+    </view>
+    <view class='comp-diff'>
+      <view class='component'>
+        <text>食用人数：</text>
+        <!-- <input bindinput='inputValue' data-type='component'></input> -->
+        <picker bindchange="selectComponent" value="{{index}}" range="{{component}}">
+          <view class="picker">
+            <text style='font-size:28rpx;color:#ffa55a;line-height:50rpx;'>{{component_curr==""?"选择分量":component_curr}}</text>
+          </view>
+        </picker>
+      </view>
+      <view class='difficult'>
+        <text decode='true'>烹饪水平：</text>
+        <picker bindchange="selectDifficult" value="{{index}}" range="{{difficult}}">
+          <view class="picker">
+            <text style='font-size:28rpx;color:#ffa55a;line-height:50rpx;'>{{difficult_curr==""?"选择菜品难度":difficult_curr}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class='shicaiView'>
+    <view class='shicaiTitle'>
+      <text>主料：</text>
+    </view>
+    <view class='zhuliao'>
+      <view class='zlView' wx:for='{{zhuliaoNum}}' hidden='{{index>0 && zlFold}}'>
+        <view class='zlName'>
+          <text>名称：</text>
+          <input bindinput='inputValue2' value='{{zhuliaoNameList[index]["zhuLiaoName"]}}' data-tag='ZL' data-type='name' data-idx='{{index}}'></input>
+        </view>
+        <view class='zlCount'>
+          <text>数量：</text>
+          <input bindinput='inputValue2' value='{{zhuliaoNameList[index]["zhuLiaoWeight"]}}' data-tag='ZL' data-type='count' data-idx='{{index}}'></input>
+        </view>
+        <view class='zlImg'>
+          <!-- <image class='img' src='{{zhuliaoImgList[index]!=""?zhuliaoImgList[index]:"../../images/picture.png"}}' bindtap='chooseImg' data-idx='{{index}}' data-tag='ZL'></image> -->
+          <image class='reduce' src='../../images/reduce.png' bindtap='reduce' data-idx='{{index}}' data-tag='ZL'></image>
+        </view>
+      </view>
+      <view class='addZL'>
+        <text hidden='{{!(zhuliaoNum>2)}}' bindtap='fold' data-type='ZL'>{{zlFold?"展开↓":"收起↑"}}</text>
+        <button bindtap='addCaiLiao' data-type='ZL'>添加主料</button>
+      </view>
+    </view>
+
+    <view class='shicaiTitle'>
+      <text>辅料：</text>
+    </view>
+    <view class='zhuliao'>
+      <view class='zlView' wx:for='{{fuliaoNum}}' hidden='{{index>0 && flFold}}'>
+        <view class='zlName'>
+          <text>名称：</text>
+          <input bindinput='inputValue2' value='{{fuliaoNameList[index]["fuliaoName"]}}' data-tag='FL' data-type='name' data-idx='{{index}}'></input>
+        </view>
+        <view class='zlCount'>
+          <text>数量：</text>
+          <input bindinput='inputValue2' value='{{fuliaoNameList[index]["fuliaoWeight"]}}' data-tag='FL' data-type='count' data-idx='{{index}}'></input>
+        </view>
+        <view class='zlImg'>
+          <!-- <image class='img' src='{{fuliaoImgList[index]!=""?fuliaoImgList[index]:"../../images/picture.png"}}' bindtap='chooseImg' data-idx='{{index}}' data-tag='FL'></image> -->
+          <image class='reduce' src='../../images/reduce.png' bindtap='reduce' data-idx='{{index}}' data-tag='FL'></image>
+        </view>
+      </view>
+      <view class='addZL'>
+        <text hidden='{{!(fuliaoNum>2)}}' bindtap='fold' data-type='FL'>{{flFold?"展开↓":"收起↑"}}</text>
+        <button bindtap='addCaiLiao' data-type='FL'>添加辅料</button>
+      </view>
+    </view>
+    
+    <view class='shicaiTitle'>
+      <text>调料：</text>
+    </view>
+    <view class='zhuliao'>
+      <view class='zlView' wx:for='{{tiaoliaoNum}}' hidden='{{index>0 && tlFold}}'>
+        <view class='zlName'>
+          <text>名称：</text>
+          <input bindinput='inputValue2' value='{{tiaoliaoNameList[index]["tiaoliaoName"]}}' data-tag='TL' data-type='name' data-idx='{{index}}'></input>
+        </view>
+        <view class='zlCount'>
+          <text>数量：</text>
+          <input bindinput='inputValue2' value='{{tiaoliaoNameList[index]["tiaoliaoWeight"]}}' data-tag='TL' data-type='count' data-idx='{{index}}'></input>
+        </view>
+        <view class='zlImg'>
+          <!-- <image class='img' src='{{tiaoliaoImgList[index]!=""?tiaoliaoImgList[index]:"../../images/picture.png"}}' bindtap='chooseImg' data-idx='{{index}}' data-tag='TL'></image> -->
+          <image class='reduce' src='../../images/reduce.png' bindtap='reduce' data-idx='{{index}}' data-tag='TL'></image>
+        </view>
+      </view>
+      <view class='addZL'>
+        <text hidden='{{!(tiaoliaoNum>2)}}' bindtap='fold' data-type='TL'>{{tlFold?"展开↓":"收起↑"}}</text>
+        <button bindtap='addCaiLiao' data-type='TL'>添加调料</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='shicaiTitle'>
+    <text>菜品制作步骤：</text>
+  </view>
+  <view class='stepView'>
+    <view class='step' wx:for="{{stepNum}}" hidden='{{index>0 && bzFold}}'>
+      <view class='stepNum'>
+        <text>步骤{{index+1}}：</text>
+      </view>
+      <view class='stepCtx'>
+        <textarea class='step-input step{{index+1}}' value='{{inputListData[index]}}' bindinput='inputValue3' data-idx='{{index}}' name='txt{{index}}'></textarea>
+        <!-- <image name='img{{index}}' data-src='{{imageListSrc[index]}}' bindtap='chooseImage2' class='step-image step-image{{index+1}}' src='{{imageListSrc[index]==""?"../../images/picture.png":imageListSrc[index]}}' data-idx='{{index}}'></image> -->
+        <image class='reduce' src='../../images/reduce.png' bindtap='reduce' data-idx='{{index}}' data-tag='BZ'></image>
+      </view>
+    </view>
+    <view class='addZL'>
+      <text hidden='{{!(stepNum>2)}}' bindtap='fold' data-type='BZ'>{{bzFold?"展开↓":"收起↑"}}</text>
+      <button bindtap='addCaiLiao' data-type='BZ'>添加步骤</button>
+    </view>
+  </view>
+
+  <view class='descriptionView'>
+    <text>菜品说明：</text>
+    <textarea bindinput='inputDescription'></textarea>
+  </view>
+
+  <view class='uploadBtn'>
+    <button bindtap='uploadDish'>上传菜品</button>
+  </view>
+
+</view>
+<view class='noneTips' wx:if='{{!userInfo||userInfo==null}}'>
+  <image src='../../images/smile.png'></image>
+  <text>上传菜品之前一定要登录哦~~</text>
+</view>

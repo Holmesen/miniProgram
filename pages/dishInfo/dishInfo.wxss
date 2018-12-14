@@ -1,0 +1,260 @@
+/* pages/dishInfo/dishInfo.wxss */
+.topView{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+}
+.dishImg{
+  height: 440rpx;
+  width: 100%;
+}
+.dishName{
+  font-size: 44rpx;
+  margin: 30rpx auto 20rpx auto;
+  font-weight: bold;
+}
+.author{
+  height:auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 20rpx auto; 
+}
+.author>image{
+  height: 64rpx;
+  width: 64rpx;
+  margin: auto 10rpx auto auto;
+  border-radius: 100rpx;
+}
+.author>text{
+  font-size: 34rpx;
+  line-height: 70rpx;
+  margin: auto auto auto 10rpx;
+}
+.dishInfo{
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  width: 100%;
+  align-content: center;
+  margin-top: 20rpx;
+}
+.dishInfo>view{
+  height: auto;
+  width: 100%;
+  align-content: center;
+  display: flex;
+  flex-flow: row;
+  margin-top: 20rpx;
+}
+.dishInfo>view>view{
+  height: auto;
+  width: 140rpx;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: auto;
+}
+.dishInfo>view>view>image{
+  height: 60rpx;
+  width: 60rpx;
+  margin: 4rpx auto;
+}
+.dishInfo>view>view>text{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 14rpx auto;
+}
+.shicaiTop,.stepTop,.recommendTop{
+  height: auto;
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+}
+.shicai{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin-bottom: 70rpx;
+}
+.zhuliao,.fuliao,.tiaoliao{
+  height: auto;
+  width: 92%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 20rpx auto 0 auto;
+  border-bottom: solid 1px #ddd;
+}
+.zhuliao>text,.fuliao>text,.tiaoliao>text{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  margin: auto 0rpx;
+  font-weight: bold;
+  border-left: solid 6rpx #ffa55a;
+  padding-left: 14rpx;
+}
+.zhuliao>view,.fuliao>view,.tiaoliao>view{
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  margin: 16rpx auto;
+  justify-content: space-between;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  /* border-bottom: solid 1px #ccc; */
+}
+.step{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+}
+.stepView{
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  margin: 20rpx auto;
+}
+.stepView>text{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-left: 20rpx;
+  word-break: break-all;
+}
+.stepView>image{
+  height: 350rpx;
+  width: 560rpx;
+  /* margin-left: 20rpx;
+  margin-top: 14rpx; */
+  margin: 14rpx auto;
+}
+.features{
+  height: auto;
+  width: 95%;
+  display: flex;
+  flex-flow: row;
+  float: left;
+  flex-wrap: wrap;
+  margin: 30rpx 0;
+  padding: 0 20rpx;
+}
+.features>view{
+  width: auto;
+  height: auto;
+  margin: 10rpx 20rpx;
+}
+.features>view>text{
+  font-size: 26rpx;
+  line-height: 40rpx;
+  padding: 8rpx 18rpx;
+  background-color: #ffa55a;
+  color: white;
+}
+.discription{
+  height: auto;
+  width: 90%;
+  padding: 10rpx 40rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 30rpx auto 10rpx auto;
+  word-break: break-all;
+}
+.recommend{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-top: 20rpx;
+  padding:0 20rpx;
+}
+.recommendView{
+  height: 300rpx;
+  width: 320rpx;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 20rpx auto;
+}
+.recommendView>image{
+  height: 230rpx;
+  width: 100%;
+  margin-top: 0;
+}
+.recommendView>text{
+  font-size: 28rpx;
+  text-align: center;
+  margin: auto;
+  line-height: 40rpx;
+  height: auto;
+}
+.operate{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 30rpx auto;
+}
+.zan,.collect,.cai{
+  height: auto;
+  width: auto;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+}
+.zan>image,.collect>image,.cai>image{
+  height: 50rpx;
+  width: 50rpx;
+  /* border-radius: 100rpx;
+  border: solid 1px #ccc; */
+  margin: auto;
+}
+.zan>text,.collect>text,.cai>text{
+  font-size: 24rpx;
+  line-height: 40rpx;
+  margin: 16rpx auto;
+}
+.num{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+.viewNum,.collectNum,.date{
+  height: auto;
+  width: auto;
+  margin: 20rpx auto;
+  display: flex;
+  flex-flow: row;
+}
+.viewNum>image{
+  height: 34rpx;
+  width: 54rpx;
+  margin: auto;
+}
+.viewNum>text,.collectNum>text,.date>text{
+  font-size: 26rpx;
+  line-height: 34rpx;
+  margin: auto auto auto 6rpx;
+}
+.collectNum>image,.date>image{
+  height: 34rpx;
+  width: 34rpx;
+  margin: auto;
+}

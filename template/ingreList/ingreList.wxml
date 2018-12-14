@@ -1,0 +1,18 @@
+<template name='ingreList'>
+<view class='ingreView'>
+  <view wx:for='{{showIngreList}}' class='ingre' hidden='{{isfold && index>3}}' bindtap='to_ingreInfo' data-idx='{{index}}' data-id='{{item.ID}}'>
+    <view class='ingreImg' data-idx='{{index}}' data-id='{{item.ID}}'>
+      <image src='{{item.imgSrc}}' data-idx='{{index}}' data-id='{{item.ID}}'></image>
+    </view>
+    <view class='ingreInfo' data-idx='{{index}}' data-id='{{item.ID}}'>
+      <text data-idx='{{index}}' data-id='{{item.ID}}'>{{item.name}}</text>
+      <view data-idx='{{index}}' data-id='{{item.ID}}'>
+        <text data-idx='{{index}}' data-id='{{item.ID}}'>{{item.introduction}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{showIngreList.length>7}}' bindtap='foldIngre' class='foldIngre'>
+    <text>{{isfold?'查看更多 ↓':'收起食材 ↑'}}</text>
+  </view>
+</view>
+</template>

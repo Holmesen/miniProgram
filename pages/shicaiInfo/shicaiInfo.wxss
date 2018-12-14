@@ -1,0 +1,249 @@
+/* pages/shicaiInfo/shicaiInfo.wxss */
+.shicaiTop{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+}
+.shicaiTop>image{
+  height: 430rpx;
+  width: 84%;
+  margin: 20rpx auto;
+}
+.shicaiName{
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  margin: 20rpx auto 0 auto;
+}
+.shicaiSubName{
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin: 20rpx auto 0 auto;
+  color: #8a8a8a;
+  word-break: break-all;
+}
+.amount{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 20rpx auto 0 auto;
+}
+.introduction{
+  width: 95%;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.Top{
+  height: auto;
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+}
+.tabooView{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin-top: 20rpx;
+}
+.shiyi,.jinji{
+  width: auto;
+  display: flex;
+  flex-flow: column;
+  margin-top: 16rpx;
+  padding: 0 30rpx;
+}
+.shiyiTitle,.jinjiTitle{
+  font-size: 28rpx;
+  margin: 10rpx 0rpx;
+  /* margin-left: 20rpx; */
+  line-height: 40rpx;
+  padding-left: 10rpx;
+  border-left: solid 6rpx #ffa55a;
+  font-weight: bold;
+}
+.shiyiContent,.jinjiContent{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 16rpx 30rpx;
+  /* margin-right: 20rpx; */
+  word-break: break-all;
+}
+.values{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin-top: 10rpx;
+}
+.valueView{
+  width: 89%;
+  display: flex;
+  flex-flow: column;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 14rpx 20rpx;
+  padding: 10rpx 20rpx;
+  border: solid 1px #ffcda4;
+  border-radius: 20rpx;
+  -moz-box-shadow:2px 3px 4px #ffcda4;
+  -webkit-box-shadow:2px 3px 4px #ffcda4; 
+  box-shadow:2px 3px 4px #ffcda4;
+}
+/* .yiji{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin-top: 20rpx;
+} */
+.yijiView,.none{
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 16rpx auto 0 auto;
+  padding-bottom: 16rpx;
+}
+.none>text{
+  font-size: 28rpx;
+  color: #8a8a8a;
+  line-height: 40rpx;
+  margin: auto;
+}
+.yijiImg{
+  display: flex;
+  flex-flow: row;
+  width: auto;
+  height: auto;
+  margin: auto 20rpx;
+}
+.yijiImg>image{
+  height: 60rpx;
+  width: 60rpx;
+  /* margin: auto 20rpx; */
+}
+.yijiTxt{
+  height: auto;
+  width: auto;
+  flex-grow: 1;
+  margin: auto 10rpx;
+}
+.yijiTxt>text{
+  width: auto;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  word-break: break-all;
+}
+.tipTopView{
+  width: 93%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 30rpx auto;
+}
+.tipTop{
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+  padding-left: 10rpx;
+  border-left: solid 6rpx #ffa55a;
+}
+.buy,.storage,.cookie{
+  width: 90%;
+  margin: 20rpx auto;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  word-break: break-all;
+}
+.recommend{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-top: 20rpx;
+  padding:0 20rpx;
+}
+.recommendView{
+  height: 300rpx;
+  width: 320rpx;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 20rpx auto;
+}
+.recommendView>image{
+  height: 230rpx;
+  width: 100%;
+  margin-top: 0;
+}
+.recommendView>text{
+  font-size: 28rpx;
+  text-align: center;
+  margin: auto;
+  line-height: 40rpx;
+  height: auto;
+}
+.yiji{
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 24rpx auto;
+  border: solid 1px #ffcda4;
+  border-radius: 24rpx;
+}
+.yijiSwitch{
+  height: 70rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+}
+.yijiSwitch>view{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+  align-content: center;
+  text-align: center;
+}
+.shiyiTop1,.jinjiTop1{
+  background-color: #ffcda4;
+  color: white;
+}
+.shiyiTop0,.jinjiTop0{
+  background-color: white;
+  color: #ffcda4;
+}
+.shiyiTop{
+  border-top-left-radius: 24rpx;
+}
+.jinjiTop{
+  border-top-right-radius: 24rpx;
+}
+.yijiSwitch>view>text{
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 70rpx;
+  margin: auto;
+  /* color: white; */
+}
+.yijiContent{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: auto;
+}

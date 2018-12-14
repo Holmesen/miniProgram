@@ -1,0 +1,384 @@
+/* pages/uploadDish/uploadDish.wxss */
+.noneTips{
+  height: auto;
+  width: 100%;
+  align-content: center;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+  margin-top: 400rpx;
+}
+.noneTips>image{
+  height: 150rpx;
+  width: 150rpx;
+  margin: auto auto 10rpx auto;
+}
+.noneTips>text{
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  margin: 10rpx auto auto auto;
+}
+.topview{
+  height: 270rpx;
+  width: 97%;
+  display: flex;
+  flex-flow: row;
+  background-color: white;
+  margin: 20rpx auto 0rpx auto;
+  /* border-top: solid 1px black;
+  border-left: solid 1px black;
+  border-right: solid 1px black; */
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.topview-left{
+  height: 250rpx;
+  width: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  align-content: center;
+}
+.dishName,.dishTaste,.dishMenu{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  margin: 30rpx 10rpx 0 10rpx;
+  align-content: center;
+}
+.dishName>text,.dishTaste text,.dishMenu>text,.features>text,.time>view>text,.comp-diff>view>text{
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+  white-space:nowrap;
+}
+.process{
+  display: flex;
+  flex-flow: row;
+  height: auto;
+  width: auto;
+  margin-left: 30rpx;
+}
+.dishName>input{
+  height: 60rpx;
+  font-size: 28rpx;
+  border: solid 2rpx #ffa55a;/*#42baba*/
+  border-radius: 14rpx;
+  line-height: 60rpx;
+  margin: auto 6rpx;
+  padding-left: 8rpx;
+  /* -moz-box-shadow:0px 2rpx 6rpx #333333;
+  -webkit-box-shadow:0px 2rpx 6rpx #333333; 
+  box-shadow:0px 2rpx 6rpx #333333; */
+}
+/* .dishTaste{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  margin: auto 10rpx;
+  align-content: center;
+} */
+.menuView{
+  height: 50rpx;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+}
+.menuView>picker,.dishTaste>picker{
+  margin-left: 8rpx;
+}
+
+.topview-right{
+  height: auto;
+  width: auto;
+  margin: auto;
+  align-content: center;
+}
+.topview-right>image{
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 500rpx;
+  margin: auto 20rpx;
+}
+.middleView{
+  height: auto;
+  width: 97%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  /* margin-top: 30rpx; */
+  background-color: white;
+  margin: 0rpx auto 20rpx auto;
+  /* border-bottom: solid 1px black;
+  border-left: solid 1px black;
+  border-right: solid 1px black; */
+  border-bottom-right-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+.features{
+  width: 97%;
+  height: auto;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: auto;
+}
+.features>input,.prepareT>input,.cookingT>input{
+  flex-grow: 1;
+  margin-right: 30rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 60rpx;
+  font-size: 28rpx;
+  border: solid 2rpx #ffa55a;
+  border-radius: 14rpx;
+  line-height: 60rpx;
+  padding-left: 8rpx;
+  /* -moz-box-shadow:0px 2rpx 6rpx #333333;
+  -webkit-box-shadow:0px 2rpx 6rpx #333333; 
+  box-shadow:0px 2rpx 6rpx #333333; */
+}
+.time,.comp-diff{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: auto;
+}
+.prepareT,.cookingT,.component,.difficult{
+  height: auto;
+  width: 47%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 30rpx 10rpx 0rpx 10rpx;
+}
+
+.shicaiView{
+  height: auto;
+  width: 97%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  /* margin-top: 30rpx; */
+  background-color: white;
+  margin: 20rpx auto;
+  border-radius: 30rpx;
+}
+
+.zhuliao,.fuliao,.tiaoliao{
+  width: 97%;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 10rpx auto 30rpx auto;
+  border: solid 1px #ffa55a;
+  border-radius: 30rpx;
+  -moz-box-shadow:0px 4rpx 4rpx #ffa55a;
+  -webkit-box-shadow:0px 4rpx 4rpx #ffa55a; 
+  box-shadow:0px 4rpx 4rpx #ffa55a;
+  padding: 8rpx;
+}
+.zlView{
+  display: flex;
+  flex-flow: row;
+  height: auto;
+  width: 98%;
+  align-content: center;
+  margin: 10rpx auto;
+}
+.zlName,.zlCount{
+  height: auto;
+  width: auto;
+  align-content: center;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  margin-left: 10rpx;
+}
+.zlName>input,.zlCount>input{
+  height: 60rpx;
+  width: 160rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  padding-left: 10rpx;
+  margin: auto;
+  border: solid 1px #ffa55a;
+  border-radius: 16rpx;
+}
+.zlName>text,.zlCount>text{
+  font-size: 30rpx;
+  text-align: center;
+  margin: auto;
+  line-height: 60rpx;
+  font-weight: bold;
+}
+.zlImg{
+  height: 60rpx;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.img{
+  height: 64rpx;
+  width: 64rpx;
+  margin: auto;
+  border-radius: 100rpx;
+}
+.reduce{
+  height: 44rpx;
+  width: 44rpx;
+  margin: auto;
+  border-radius: 100rpx;
+}
+.addZL{
+  height: auto;
+  width: 98%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: space-between;
+}
+.addZL>text{
+  font-size: 30rpx;
+  line-height: 70rpx;
+  margin: 20rpx auto 20rpx 20rpx;
+}
+.addZL>button{
+  height: 70rpx;
+  width: 180rpx;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  margin: 20rpx 20rpx 20rpx auto;
+  border-radius: 100rpx;
+  background-color: #ffa55a;
+  color: white;
+}
+.shicaiTitle{
+  height: auto;
+  width: auto;
+  font-size: 32rpx;
+  margin: auto 12rpx;
+  font-weight: bold;
+}
+
+
+/* 步骤样式 */
+.stepView{
+  height: auto;
+  width: 93%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  /* margin-top: 30rpx; */
+  /* background-color: white; */
+  margin: 20rpx auto;
+  /* border-radius: 30rpx; */
+  border: solid 1px #ffa55a;
+  border-radius: 30rpx;
+  -moz-box-shadow:0px 4rpx 4rpx #ffa55a;
+  -webkit-box-shadow:0px 4rpx 4rpx #ffa55a; 
+  box-shadow:0px 4rpx 4rpx #ffa55a;
+  padding: 20rpx 10rpx;
+}
+.step{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 16rpx auto;
+}
+.stepNum{
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  line-height: 40rpx;
+}
+.stepCtx{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 16rpx auto;
+}
+.step-input{
+  width: 70%;
+  height: 120rpx;
+  line-height: 40rpx;
+  margin: auto;
+  border: solid 1px #ffa55a;
+  font-size: 30rpx;
+  border-radius:30rpx;
+  padding-left:14rpx;
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+}
+.step-image{
+  width: 100rpx;
+  height: 100rpx;
+  margin: auto;
+  border-radius:200rpx;
+}
+.addStep{
+  font-size: 30rpx;
+  margin: auto;
+  text-align: center;
+}
+
+.descriptionView{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 30rpx auto;
+}
+.descriptionView>text{
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  margin: auto 30rpx;
+}
+.descriptionView>textarea{
+  height: 200rpx;
+  width: 93%;
+  margin: 20rpx auto;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  border: solid 1px #ffa55a;
+  border-radius:30rpx;
+  padding-left:14rpx;
+  padding-top: 8rpx;
+  -moz-box-shadow:0px 4rpx 4rpx #ffa55a;
+  -webkit-box-shadow:0px 4rpx 4rpx #ffa55a; 
+  box-shadow:0px 4rpx 4rpx #ffa55a;
+}
+
+.uploadBtn{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin-bottom: 50rpx;
+  margin-top: 20rpx;
+}
+.uploadBtn>button{
+  height: 80rpx;
+  width: 250rpx;
+  border-radius: 200rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  background-color: #ffa55a;
+  color: white;
+  margin: auto;
+}

@@ -1,0 +1,156 @@
+/* pages/home/home.wxss */
+.banner{
+  height: 400rpx;
+  width: 100%;
+}
+swiper{
+  height: 100%;
+  width: 100%;
+}
+swiper-item{
+  height: 100%;
+  width: 100%;
+}
+swiper-item>image{
+  height: 100%;
+  width: 100%;
+}
+.search{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin-top: 26rpx;
+}
+.searchView{
+  height: 60rpx;
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+  border: solid 1px #ffa55a;
+  border-radius: 100rpx;
+  justify-content: space-between;
+}
+.searchView>input{
+  height: 100%;
+  width: 85%;
+  margin: auto 16rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  padding-left: 10rpx;
+}
+.dishInfo{
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  width: 100%;
+  align-content: center;
+  margin-top: 20rpx;
+}
+.dishInfo>view{
+  height: auto;
+  width: 100%;
+  align-content: center;
+  display: flex;
+  flex-flow: row;
+  margin-top: 20rpx;
+}
+.dishInfo>view>view{
+  height: auto;
+  width: 140rpx;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: auto;
+}
+.dishInfo>view>view>image{
+  height: 60rpx;
+  width: 60rpx;
+  margin: auto;
+}
+.dishInfo>view>view>text{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 14rpx auto;
+}
+.Title{
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 8rpx;
+  border-bottom: solid 1px #cecece;
+  margin:30rpx auto 0 auto;
+}
+.TitleL{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  margin: auto auto auto 0rpx;
+  align-content: center;
+}
+.TitleR{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  margin: auto 10rpx auto auto;
+  align-content: center;
+}
+.TitleL>image{
+  height: 50rpx;
+  width: 50rpx;
+  margin: auto 10rpx;
+}
+.TitleL>text{
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin: auto 10rpx;
+  font-weight: bold;
+}
+.TitleR>text{
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #8a8a8a;
+  margin: auto;
+}
+.recommend{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-top: 10rpx;
+  padding:0 20rpx;
+}
+.recommendView{
+  height: 284rpx;
+  width: 310rpx;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  margin: 10rpx auto;
+}
+.recommendView>image{
+  height: 230rpx;
+  width: 100%;
+  margin-top: 0;
+}
+.recommendView>text{
+  width: 100%;
+  font-size: 28rpx;
+  text-align: center;
+  margin: auto;
+  line-height: 40rpx;
+  height: auto;
+  overflow:hidden;/*超出部分隐藏*/
+  white-space:nowrap;/*文本溢出用"..."表示*/
+  text-overflow:ellipsis;/*适用IE*/
+  -o-text-overflow:ellipsis;/*适用opera*/
+  -moz-binding: url('ellipsis.xml#ellipsis');/*适用火狐(firefox通过XUL实现效果)*/
+}

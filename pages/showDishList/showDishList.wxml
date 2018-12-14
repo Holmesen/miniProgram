@@ -1,0 +1,47 @@
+<view class='top'>
+  <text>{{title}}</text>
+</view>
+<view style='height:80rpx;width:100%;'></view>
+<view class='view'>
+  <view class='dishView' wx:for='{{dishList}}' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='to_dishInfo'>
+    <view class='dishImg'>
+      <image src='{{item.img_src}}' data-idx='{{index}}' data-id='{{item.ID}}'></image>
+      <!-- <view>
+        <view>
+          <image></image>
+          <text></text>
+        </view>
+        <view>
+          <image></image>
+          <text></text>
+        </view>
+      </view> -->
+    </view>
+    <view class='dishInfo'>
+      <!-- <text>干煸麻辣鸡丝</text> -->
+      <view class='info2' data-idx='{{index}}' data-id='{{item.ID}}'>
+        <view class='dishName' data-idx='{{index}}' data-id='{{item.ID}}'>
+          <text data-idx='{{index}}' data-id='{{item.ID}}'>{{item.name}}</text>
+        </view>
+        <view class='info2R' data-idx='{{index}}' data-id='{{item.ID}}'>
+          <image data-idx='{{index}}' data-id='{{item.ID}}' src='https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epsxMo5qmngb3ZkrbvQicVIm52NS5I9PJBSGXEichYRXujqiaicXiahxVB7CtKNMKiaC9ehE7lXABNYG90Q/132'></image>
+          <text data-idx='{{index}}' data-id='{{item.ID}}'>{{item.user_name}}</text>
+        </view>
+        <!-- <view class='info2R'>
+          <image></image>
+          <text></text>
+        </view> -->
+      </view>
+      <view class='info1' data-idx='{{index}}' data-id='{{item.ID}}'>
+        <view class='info1L' style='margin: auto auto auto 0;'>
+          <image src='../../images/favorites_fill.png' data-idx='{{index}}' data-id='{{item.ID}}'></image>
+          <text data-idx='{{index}}' data-id='{{item.ID}}'>{{item._like}}</text>
+        </view>
+        <view class='info1R' style='margin: auto 0 auto auto;' data-idx='{{index}}' data-id='{{item.ID}}'>
+          <image src='../../images/view.png' data-idx='{{index}}' data-id='{{item.ID}}'></image>
+          <text data-idx='{{index}}' data-id='{{item.ID}}'>{{item._view}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

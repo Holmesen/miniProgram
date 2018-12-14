@@ -1,0 +1,26 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/* text{
+  font-family: 'Times New Roman', Times, serif;
+}
+button{
+  font-family: 'Times New Roman', Times, serif;
+}
+input{
+  font-family: 'Times New Roman', Times, serif;
+}
+textarea{
+  font-family: 'Times New Roman', Times, serif;
+} */
+view{
+  font-family: 'Times New Roman', Times, serif;/*cursive*/
+}

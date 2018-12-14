@@ -1,0 +1,129 @@
+<view class='shicaiTop'>
+  <image src='{{info.imgSrc}}'></image>
+  <text class='shicaiName'>{{info.name}}</text>
+  <text class='shicaiSubName'>{{info.subName}}</text>
+  <text class='amount'>{{info.suggest}}</text>
+</view>
+<view class='Top'>
+  <text>------食材简介------</text>
+</view>
+<view class='introduction'>
+  <text space='emsp'>  {{info.introduction}}</text>
+</view>
+<view class='Top'>
+  <text>------人群禁忌------</text>
+</view>
+<view class='tabooView'>
+  <view class='shiyi'>
+    <text class='shiyiTitle' style='color:#39e639;'>适宜人群：</text>
+    <text class='shiyiContent'>{{info.suitable}}</text>
+  </view>
+  <view class='jinji'>
+    <text class='jinjiTitle' style='color:#ff3f3f;'>禁忌人群：</text>
+    <text class='jinjiContent'>{{info.taboo}}</text>
+  </view>
+</view>
+<view class='Top'>
+  <text>------营养价值------</text>
+</view>
+<view class='values'>
+  <view class='valueView' wx:for='{{values}}'>
+    <text>{{item}}</text>
+  </view>
+</view>
+<view class='Top'>
+  <text>------食用效果------</text>
+</view>
+<view class='values'>
+  <view class='valueView' wx:for='{{info.effect}}'>
+    <text decode='true'>{{index+1}}、{{item}}</text>
+  </view>
+</view>
+<view class='Top'>
+  <text>------搭配宜忌------</text>
+</view>
+<!-- <swiper indicator-dots="true"
+  autoplay="false">
+  <block wx:for="{{2}}" wx:for-index="idx">
+    <swiper-item>
+      <view wx:for='{{idx==0?info.match_yi:info.match_ji}}' class='yijiView'>
+        <view class='yijiImg'>
+          <image src='../../images/{{item.type=="宜"?"yi":"ji"}}.png'></image>
+        </view>
+        <view class='yijiTxt'>
+          <text>{{item.txt}}</text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper> -->
+<view class='yiji'>
+  <view class='yijiSwitch'>
+    <view class='shiyiTop {{yijiTag?"shiyiTop1":"shiyiTop0"}}' bindtap='yijiSwitch' data-tag='yi'><text bindtap='yijiSwitch' data-tag='yi'>适宜</text></view>
+    <view  class='jinjiTop {{yijiTag?"jinjiTop0":"jinjiTop1"}}' bindtap='yijiSwitch' data-tag='ji'><text bindtap='yijiSwitch' data-tag='ji'>禁忌</text></view>
+  </view>
+  <view class='yijiContent' hidden='{{yijiTag}}'>
+    <view class='none' wx:if='{{info.match_yi.length==0}}'><text>该食材没有适宜的搭配哦~~</text></view>
+    <view wx:for='{{info.match_yi}}' class='yijiView' style='border-bottom: solid 1px #ffe4cd;'>
+      <view class='yijiImg'>
+        <image src='../../images/yi.png'></image>
+      </view>
+      <view class='yijiTxt'>
+        <text>{{item.txt}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='yijiContent' hidden='{{!yijiTag}}'>
+    <view class='none' wx:if='{{info.match_ji.length==0}}'><text>该食材没有禁忌的搭配哦~~</text></view>
+    <view wx:for='{{info.match_ji}}' class='yijiView' style='border-bottom: solid 1px #ffe4cd;'>
+      <view class='yijiImg'>
+        <image src='../../images/ji.png'></image>
+      </view>
+      <view class='yijiTxt'>
+        <text>{{item.txt}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='yiji'>
+  <view wx:for='{{info._match}}' class='yijiView'>
+    <view class='yijiImg'>
+      <image src='../../images/{{item.type=="宜"?"yi":"ji"}}.png'></image>
+    </view>
+    <view class='yijiTxt'>
+      <text>{{item.txt}}</text>
+    </view>
+  </view>
+</view> -->
+<view class='Top'>
+  <text>---------Tips---------</text>
+</view>
+<view class='tipTopView'>
+  <view class='tipTop'>
+    <text>选购技巧</text>
+  </view>
+  <view class='buy'>
+    <text>{{info.purchase}}</text>
+  </view>
+  <view class='tipTop'>
+    <text>存储方法</text>
+  </view>
+  <view class='storage'>
+    <text>{{info.storage}}</text>
+  </view>
+  <view class='tipTop'>
+    <text>烹饪技巧</text>
+  </view>
+  <view class='cookie'>
+    <text>{{info.tips}}</text>
+  </view>
+</view>
+<view class='Top'>
+  <text>------推荐菜品------</text>
+</view>
+<view class='recommend'>
+  <view class='recommendView' wx:for='{{relatedDish}}' wx:if='{{index<4}}' data-id='{{item.ID}}' data-idx='{{index}}' bindtap='to_dishInfo'>
+    <image src='{{item.img_src}}' data-id='{{item.ID}}' data-idx='{{index}}'></image>
+    <text data-id='{{item.ID}}' data-idx='{{index}}'>{{item.name}}</text>
+  </view>
+</view>

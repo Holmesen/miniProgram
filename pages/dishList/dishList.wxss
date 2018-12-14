@@ -1,0 +1,2 @@
+/* pages/dishList/dishList.wxss */
+@import "../../template/dishList/dishList.wxss";

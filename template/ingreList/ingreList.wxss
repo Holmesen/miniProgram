@@ -1,0 +1,71 @@
+.ingreView{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+}
+.ingre{
+  height: auto;
+  width: 90%;
+  margin: 16rpx auto;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+.ingreImg{
+  width: auto;
+  height: auto;
+}
+.ingreImg>image{
+  height: 220rpx;
+  width: 220rpx;
+  margin: auto;
+}
+.ingreInfo{
+  height: 220rpx;
+  width: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  align-content: center;
+}
+.ingreInfo>text{
+  font-size: 34rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  margin: 0 16rpx;
+}
+.ingreInfo>view{
+  height: 180rpx;
+  width: 100%;
+  margin: auto;
+  align-content: center;
+}
+.ingreInfo>view>text{
+  font-size: 28rpx;
+  color: #aaa;
+  margin: auto 16rpx;
+  line-height: 60rpx;
+  overflow:hidden;  
+  text-overflow: ellipsis;  
+  white-space: normal;  
+  display:-webkit-box;  
+  -webkit-box-orient:vertical;  
+  -webkit-line-clamp:3;
+}
+.foldIngre{
+  height: auto;
+  width: 100%;
+  padding: 8rpx 0;
+  align-content: center;
+  text-align: center;
+}
+.foldIngre>text{
+  width: auto;
+  margin: auto;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #aaa;
+}

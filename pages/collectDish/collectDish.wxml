@@ -1,0 +1,6 @@
+<view class='top'>
+  <text>我收藏的菜品</text>
+</view>
+<view style='height:80rpx;width:100%;'></view>
+<import src='../../template/dishList2/dishList2.wxml'/>
+<template is='dishList2' data='{{dishList,type:"collect"}}'/>

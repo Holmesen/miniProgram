@@ -1,0 +1,109 @@
+/* pages/search/search.wxss */
+@import "../../template/dishList/dishList.wxss";
+@import "../../template/ingreList/ingreList.wxss";
+.search{
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  /* margin: 20rpx 0;
+  padding: 10rpx 0; */
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  background-color: white;
+}
+.searchView{
+  height: 60rpx;
+  width: 91%;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+  border: solid 1px #ffa55a;
+  border-radius: 100rpx;
+  justify-content: space-between;
+}
+.searchView>input{
+  height: 100%;
+  width: 85%;
+  margin: auto 16rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  padding-left: 10rpx;
+}
+.hot-search{
+  height: auto;
+  width: 92%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 18rpx auto;
+}
+.hot-title{
+  font-size: 30rpx;
+  color: #dd3535;
+  line-height: 40rpx;
+  margin: auto 0;
+  font-weight: bold;
+}
+.hot-dishname{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: auto 10rpx;
+}
+.history{
+  height: auto;
+  width: 92%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: 16rpx auto;
+  flex-wrap: wrap;
+}
+.history>text{
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin: auto 0;
+  font-weight: bold;
+  color: #e49858;
+}
+.history>view{
+  height: auto;
+  width: auto;
+  padding: 6rpx 18rpx;
+  border: solid 1px #ffa55a;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 10rpx;
+  border-radius: 50rpx;
+  /* background-color: #ffa55a;
+  color: white; */
+}
+.clearHistory{
+  width: 97%;
+  height: auto;
+  align-content: center;
+  margin: 0 10rpx;
+  padding: 14rpx 0;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #999;
+  text-align: center;
+  border-bottom: solid 1px #ccc;
+}
+.title{
+  height: 50rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin-top: 20rpx;
+}
+.title>text{
+  font-size: 34rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+  margin: auto auto auto 30rpx;
+}

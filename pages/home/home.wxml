@@ -1,0 +1,106 @@
+<view class='banner'>
+  <swiper autoplay='true' indicator-dots="true">
+    <block wx:for='{{banners}}'>
+      <swiper-item>
+        <image src='{{item}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- <view class='search'>
+  <view class='searchView'>
+    <input placeholder='请输入要搜索的菜品名'></input>
+    <icon type='search' color='#ffa55a' size='20' style='margin: auto 16rpx;'></icon>
+  </view>
+</view> -->
+<view class='dishInfo'>
+  <view>
+    <view class='crafts' bindtap='to_showDishList2'>
+      <image src='../../images/{{time=="早餐"?"morning0":(time=="午餐"?"noon0":(time=="下午茶"?"tea0":(time=="晚餐"?"night0":"nightingale0")))}}.png'></image>
+      <text>{{time}}</text>
+    </view>
+    <view class='difficult' bindtap='to_showDishList3'>
+      <image src='../../images/foods0.png'></image>
+      <text>{{randomCuisine}}</text>
+    </view>
+    <view class='taste' bindtap='to_showDishList4'>
+      <image src='../../images/snack0.png'></image>
+      <text>{{randomCuisine2}}</text>
+    </view>
+    <view class='cookie' bindtap='to_showDishList5'>
+      <image src='../../images/recommend0.png'></image>
+      <text>推荐</text>
+    </view>
+  </view>
+</view>
+
+<view class='Title'>
+  <view class='TitleL'>
+    <image src='../../images/hot.png'></image>
+    <text>热门菜谱</text>
+  </view>
+  <view class='TitleR' data-type='hourshotDish' bindtap='to_showDishList'>
+    <text data-type='热门菜谱'>更多>>></text>
+  </view>
+</view>
+<view>
+  <view class='recommend'>
+    <view class='recommendView' wx:for='{{hourshotDish}}' wx:if='{{index<4}}' data-type='hourshot' data-id='{{item.ID}}' data-idx='{{index}}' bindtap='to_dishInfo'>
+      <image src='{{item.img_src}}' data-type='hourshot' data-id='{{item.ID}}' data-idx='{{index}}'></image>
+      <text data-type='hourshot' data-id='{{item.ID}}' data-idx='{{index}}'>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='Title'>
+  <view class='TitleL'>
+    <image src='../../images/new.png'></image>
+    <text>最新菜谱</text>
+  </view>
+  <view class='TitleR' data-type='newDish' bindtap='to_showDishList'>
+    <text data-type='最新菜谱'>更多>>></text>
+  </view>
+</view>
+<view>
+  <view class='recommend'>
+    <view class='recommendView' wx:for='{{newDish}}' wx:if='{{index<4}}' data-type='daynew' data-id='{{item.ID}}' data-idx='{{index}}' bindtap='to_dishInfo'>
+      <image src='{{item.img_src}}' data-type='daynew' data-id='{{item.ID}}' data-idx='{{index}}'></image>
+      <text data-type='daynew' data-id='{{item.ID}}' data-idx='{{index}}'>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='Title'>
+  <view class='TitleL'>
+    <image src='../../images/day.png'></image>
+    <text>今日最热</text>
+  </view>
+  <view class='TitleR' data-type='dayhotDish' bindtap='to_showDishList'>
+    <text data-type='今日最热'>更多>>></text>
+  </view>
+</view>
+<view>
+  <view class='recommend'>
+    <view class='recommendView' wx:for='{{dayhotDish}}' wx:if='{{index<4}}' data-type='dayhot' data-id='{{item.ID}}' data-idx='{{index}}' bindtap='to_dishInfo'>
+      <image src='{{item.img_src}}' data-type='dayhot' data-id='{{item.ID}}' data-idx='{{index}}'></image>
+      <text data-type='dayhot' data-id='{{item.ID}}' data-idx='{{index}}'>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<view class='Title'>
+  <view class='TitleL'>
+    <image src='../../images/week.png'></image>
+    <text>本周最热</text>
+  </view>
+  <view class='TitleR' data-type='weekhotDish' bindtap='to_showDishList'>
+    <text data-type='本周最热'>更多>>></text>
+  </view>
+</view>
+<view>
+  <view class='recommend'>
+    <view class='recommendView' wx:for='{{weekhotDish}}' wx:if='{{index<4}}' data-type='weekhot' data-id='{{item.ID}}' data-idx='{{index}}' bindtap='to_dishInfo'>
+      <image src='{{item.img_src}}' data-type='weekhot' data-id='{{item.ID}}' data-idx='{{index}}'></image>
+      <text data-type='weekhot' data-id='{{item.ID}}' data-idx='{{index}}'>{{item.name}}</text>
+    </view>
+  </view>
+</view>

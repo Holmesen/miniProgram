@@ -1,0 +1,15 @@
+<view class='view'>
+  <view class='dishView' wx:for='{{ingreList}}' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='to_shicaiInfo'>
+    <view class='dishImg'>
+      <image src='{{item.imgSrc}}' data-idx='{{index}}' data-id='{{item.ID}}'></image>
+    </view>
+    <view class='dishInfo'>
+      <view class='dishName' data-idx='{{index}}' data-id='{{item.ID}}'>
+        <text data-idx='{{index}}' data-id='{{item.ID}}'>{{item.name}}</text>
+      </view>
+      <view class='jianjie'>
+        <text>{{item.introduction}}</text>
+      </view>
+    </view>
+  </view>
+</view>

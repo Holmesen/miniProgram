@@ -1,0 +1,27 @@
+<template name='dishList'>
+<view class='dishList'>
+  <view class='dish' wx:for='{{showDishList}}'>
+    <image class='dishImg' src='{{item.img_src}}' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='to_dishInfo'></image>
+    <view class='dsihInfo' data-idx='{{index}}' data-id='{{item.ID}}'>
+      <text class='infoName' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='to_dishInfo'>{{item.name}}</text>
+      <view class='features'>
+        <view wx:for='{{item.features}}' wx:if='{{index<3}}'><text>{{item}}</text></view>
+      </view>
+      <view class='infoAuthor'>
+        <image src='{{item.userInfo.avatar_url}}'></image>
+        <text>{{item.user_name}}</text>
+      </view>
+      <view class='infoCount'>
+        <view class='countLike'>
+          <image src='../../images/zan0.png'></image>
+          <text>{{item._like}}</text>
+        </view>
+        <view class='countView'>
+          <image src='../../images/view.png'></image>
+          <text>{{item._view}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</template>

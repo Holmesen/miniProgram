@@ -1,0 +1,16 @@
+/* pages/managerDish/managerDish.wxss */
+@import "../../template/dishList2/dishList2.wxss";
+.top{
+  height:80rpx;
+  width:100%;
+  text-align:center;
+  background-color:#ffa55a;
+  position: fixed;
+  z-index: 50;
+}
+.top>text{
+  font-size: 32rpx;
+  line-height: 80rpx;
+  color: white;
+  font-weight: bold;
+}

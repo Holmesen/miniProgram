@@ -1,0 +1,112 @@
+/* pages/dishList/dishList.wxss */
+.dishList{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  /* margin-top: 20rpx; */
+}
+.dish{
+  height: auto;
+  width: 90%;
+  margin: 16rpx auto;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+.dishImg{
+  height: 220rpx;
+  width: 220rpx;
+  margin: auto;
+}
+.dsihInfo{
+  height: 220rpx;
+  width: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  align-content: center;
+}
+.infoName{
+  font-size: 34rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  margin: auto 16rpx;
+}
+.infoAuthor{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  margin: auto 16rpx;
+}
+.infoAuthor>image{
+  height: 40rpx;
+  width: 40rpx;
+  margin-left: 10rpx;
+  border-radius: 100rpx;
+}
+.infoAuthor>text{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-left: 16rpx;
+}
+.infoCount{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  /* justify-content: space-between; */
+  align-content: center;
+  margin: auto 16rpx;
+}
+.infoCount>view{
+  height: auto;
+  width: 50%;
+  float: left;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: auto;
+}
+.countLike>image{
+  height: 34rpx;
+  width: 34rpx;
+  margin: auto 10rpx;
+}
+.countView>image{
+  width: 46rpx;
+  height: 34rpx;
+  margin: auto 10rpx;
+}
+.infoCount>view>text{
+  font-size: 26rpx;
+  color: #aaa;
+  line-height: 40rpx;
+  margin: auto 10rpx;
+}
+.features{
+  height: 40rpx;
+  width: 94%;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  margin: auto 16rpx;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.features>view{
+  height: auto;
+  width: auto;
+  padding: 6rpx 16rpx;
+  background-color: #ffa55a;
+  color: #ffffff;
+  align-content: center;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  margin: auto 10rpx;
+}
+.features>view>text{
+  word-break: keep-all;
+}

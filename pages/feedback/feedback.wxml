@@ -1,0 +1,30 @@
+<view class='top'>
+  <text>意见反馈</text>
+</view>
+<view class='contact'>
+  <view class='important'>
+    <image src='../../images/important.png'></image>
+    <text>联系方式：</text>
+  </view>
+  <input value='{{contact}}' placeholder='请输入您的联系方式' bindinput='inputContact' style='border: solid 1px {{firstSubmit==true?(contact!=""?"#aaa":"red"):"#aaa"}};'></input>
+</view>
+<view class='title'>
+  <text>标题：</text>
+  <input value='{{title}}' placeholder='请输入您要反馈或建议的标题' bindinput='inputTitle' style='border: solid 1px #aaa;'></input>
+</view>
+<view class='content'>
+  <view class='important'>
+    <image src='../../images/important.png'></image>
+    <text>内容：</text>
+  </view>
+  <textarea value='{{detail}}' placeholder='请输入您要反馈或建议的内容' bindinput='inputDetail' style='border: solid 1px {{firstSubmit==true?(detail!=""?"#aaa":"red"):"#aaa"}};'></textarea>
+</view>
+<view class='btn'>
+  <button bindtap='submitFeedback'>提交</button>
+</view>
+<view class='callphone'>
+  <view bindtap='callphone' style='width:auto;margin:auto;'>
+    <text>联系方式：17759502262</text>
+    <image src='../../images/callphone.png'></image>
+  </view>
+</view>

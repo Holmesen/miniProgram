@@ -1,0 +1,4 @@
+<import src='../../template/dishList/dishList.wxml'/>
+<view style='height: auto;width: 100%;'>
+  <template is='dishList'/>
+</view>

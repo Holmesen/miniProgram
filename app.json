@@ -1,0 +1,57 @@
+{
+  "pages":[
+    
+    "pages/home/home",
+    "pages/showDishList/showDishList",
+    "pages/showIngreList/showIngreList",
+    "pages/category/category",
+    "pages/search/search",
+    "pages/dishList/dishList",
+    "pages/shicaiInfo/shicaiInfo",
+    "pages/dishInfo/dishInfo",
+    "pages/uploadDish/uploadDish",
+    "pages/me/me",
+    "pages/preInfo/preInfo",
+    "pages/collectDish/collectDish",
+    "pages/managerDish/managerDish",
+    "pages/feedback/feedback",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffa55a",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home_fill.png"
+    },{
+      "pagePath": "pages/category/category",
+      "text": "分类",
+      "iconPath": "images/category.png",
+      "selectedIconPath": "images/category_fill.png"
+    },{
+      "pagePath": "pages/uploadDish/uploadDish",
+      "text": "上传菜品",
+      "iconPath": "images/add2.png",
+      "selectedIconPath": "images/add_fill.png"
+    },{
+      "pagePath": "pages/search/search",
+      "text": "搜索",
+      "iconPath": "images/search.png",
+      "selectedIconPath": "images/search_fill.png"
+    },{
+      "pagePath": "pages/me/me",
+      "text": "我的",
+      "iconPath": "images/me.png",
+      "selectedIconPath": "images/me_fill.png"
+    }],
+    "color":"#aaaaaa",
+    "selectedColor": "#ffa55a",
+    "backgroundColor": "#ffffff"
+  }
+}

@@ -1,0 +1,30 @@
+<!-- <view class='search'>
+  <view class='searchView'>
+    <input placeholder='{{cateType=="菜系"?"查找菜品类别":"查找食材类别"}}'></input>
+    <icon type='search' color='#ffa55a' size='20' style='margin: auto 16rpx;' bindtap='searchCate'></icon>
+  </view>
+</view> -->
+<view class='topCategory'>
+  <view bindtap='switchCate' class='{{cateType=="菜系"?"currCate":"cateCuisine"}}' data-tag='菜系'>
+    <!-- <image src='../../images/cuisine.png'></image> -->
+    <text data-tag='菜系'>菜系分类</text>
+  </view>
+  <view bindtap='switchCate' class='{{cateType=="食材"?"currCate":"cateIngre"}}' data-tag='食材'>
+    <!-- <image src='../../images/ingredients0.png'></image> -->
+    <text data-tag='食材'>食材分类</text>
+  </view>
+</view>
+<view class='category'>
+  <view class='menu'>
+    <view bindtap='switchMenu' data-tag='{{item}}' wx:for='{{cateType=="食材"?category:menu}}' class='{{currMenu==item||currMenu2==item?"menuView":"menuView0"}}'>
+      <text bindtap='switchMenu' data-tag='{{item}}'>{{item}}</text>
+    </view>
+  </view>
+  <view class='cuisine'>
+    <scroll-view scroll-y='true' style="height: 940rpx;">
+    <view class='cuisineView' wx:for='{{cateType=="食材"?subCategory:cuisine}}' data-tag='{{item}}' bindtap='showSubCateDish'>
+      <text data-tag='{{item}}'>{{item}}</text>
+    </view>
+    </scroll-view>
+  </view>
+</view>
