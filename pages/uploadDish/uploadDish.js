@@ -92,7 +92,53 @@ Page({
       method: 'POST',
       dataType: 'json',
       responseType: 'text',
-      success: function (res) { console.log(res); },
+      success: function (res) { 
+        console.log(res); 
+        if(res.data.success){
+          wx.showToast({
+            title: '添加菜品成功！',
+            mask: true,
+          })
+          that.setData({
+            menu_curr: '',
+            cuisine_curr: '',
+            taste: '',
+            mainPic: '',
+            dishName: '',
+            features: '',
+            prepareT: '',
+            cookingT: '',
+            difficult_curr: '',
+            component_curr: '',
+            process: '',
+            zhuliaoNum: 0,
+            fuliaoNum: 0,
+            tiaoliaoNum: 0,
+            zhuliaoNameList: [{ "zhuLiaoName": "", "zhuLiaoWeight": "" }],
+            fuliaoNameList: [{ "fuliaoName": "", "fuliaoWeight": "" }],
+            tiaoliaoNameList: [{ "tiaoliaoName": "", "tiaoliaoWeight": "" }],
+            zhuliaoImgList: [""],
+            fuliaoImgList: [""],
+            tiaoliaoImgList: [""],
+            zlFold: false,
+            flFold: false,
+            tlFold: false,
+            bzFold: false,
+            stepNum: 0,
+            inputListData: [""],
+            imageListSrc: [""],
+            imgsrc: '',
+            stepList: [],
+            description: '',
+          })
+        }else{
+          wx.showToast({
+            title: '添加菜品失败！',
+            icon: 'none',
+            mask: true,
+          })
+        }
+      },
     })
   },
 
@@ -174,7 +220,7 @@ Page({
   chooseMainPic:function(){
     let that=this;
     wx.chooseImage({
-      count: 9,
+      count: 1,
       sourceType: ['album', 'camera'],
       success: function(res) {
         wx.uploadFile({
@@ -182,10 +228,10 @@ Page({
           filePath: res.tempFilePaths[0],
           name: 'xx',
           header: {},
-          formData: {},
+          formData: {type:'dish'},
           success: function (res) {
             that.setData({
-              mainPic: myurl + '/images' + (JSON.parse(res.data)).data
+              mainPic: myurl + JSON.parse(res.data).data
             })
           },
         })
@@ -382,7 +428,7 @@ Page({
               header: {},
               formData: {},
               success: function (res) {
-                that.data.zhuliaoImgList[e.target.dataset.idx] = myurl + '/images' + (JSON.parse(res.data)).data;
+                that.data.zhuliaoImgList[e.target.dataset.idx] = myurl + JSON.parse(res.data).data;
                 that.setData({
                   zhuliaoImgList: that.data.zhuliaoImgList
                 })
@@ -404,7 +450,7 @@ Page({
               header: {},
               formData: {},
               success: function (res) {
-                that.data.fuliaoImgList[e.target.dataset.idx] = myurl + '/images' + (JSON.parse(res.data)).data;
+                that.data.fuliaoImgList[e.target.dataset.idx] = myurl + JSON.parse(res.data).data;
                 that.setData({
                   fuliaoImgList: that.data.fuliaoImgList
                 })
@@ -426,7 +472,7 @@ Page({
               header: {},
               formData: {},
               success: function (res) {
-                that.data.tiaoliaoImgList[e.target.dataset.idx] = myurl + '/images' + (JSON.parse(res.data)).data;
+                that.data.tiaoliaoImgList[e.target.dataset.idx] = myurl + JSON.parse(res.data).data;
                 that.setData({
                   tiaoliaoImgList: that.data.tiaoliaoImgList
                 })
@@ -498,10 +544,10 @@ Page({
           url: myurl+'/upload_image',
           filePath: res.tempFilePaths[0],
           name: 'xx',
-          formData: {},
+          formData: {type:'step'},
           success: function(res) {
-            that.data.imageListSrc[e.target.dataset.idx] = myurl + '/images' + (JSON.parse(res.data)).data;
-            that.data.stepList[e.target.dataset.idx]["newStepImgSrc"] = myurl + '/images' + (JSON.parse(res.data)).data;
+            that.data.imageListSrc[e.target.dataset.idx] = myurl + JSON.parse(res.data).data;
+            that.data.stepList[e.target.dataset.idx]["newStepImgSrc"] = myurl + JSON.parse(res.data).data;
             that.setData({
               imageListSrc: that.data.imageListSrc
             })

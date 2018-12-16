@@ -51,8 +51,8 @@ App({
   },
   globalData: {
     userID:3,
-    //api:'https://www.holmesen.club',
-    api:'http://localhost:3000',
+    api:'https://www.holmesen.club',
+    //api:'http://localhost:3000',
     userInfo: null,
     operate:null,
   }

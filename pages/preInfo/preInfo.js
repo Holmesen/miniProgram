@@ -164,18 +164,6 @@ Page({
     if(that.data.name!=that.data._userInfo.name){
       obj.name=that.data.name;
     }
-    // if (that.data.tempImgSrc != that.data._userInfo.avatar_url) {
-    //   //obj.avatar_url = that.data.tempImgSrc;
-    //   wx.uploadFile({
-    //     url: myurl +'/fileOperate/image',
-    //     filePath: that.data.tempImgSrc,
-    //     name: 'file',
-    //     header: { 'Content-Type': "multipart/form-data"},
-    //     success: function(res) {
-    //       console.log('上传新头像：',res);
-    //     },
-    //   })
-    // }
     if (that.data.userInfo.province != that.data._userInfo.province) {
       obj.province = that.data.userInfo.province;
     }
@@ -188,51 +176,89 @@ Page({
     if (that.data.introduction != that.data._userInfo.introduction) {
       obj.introduction = that.data.introduction;
     }
-    wx.request({
-      url: myurl+'/user/updateinfo',
-      data: {
-        userID:app.globalData.userID,
-        _updateData: JSON.stringify(obj)
-      },
-      header: { "Content-Type": "application/x-www-form-urlencoded"},
-      method: 'POST',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res) {
-        console.log('修改信息：',res);
-        if(res.data.success){
-          that.setData({
-            isUpdate: false
-          })
-          console.log(app.globalData);
+    if (that.data.tempImgSrc != that.data._userInfo.avatar_url) {
+      //obj.avatar_url = that.data.tempImgSrc;
+      wx.uploadFile({
+        url: myurl + '/upload_image',
+        filePath: that.data.tempImgSrc,
+        name: 'xx',
+        header: { 'Content-Type': "multipart/form-data" },
+        formData: { type: 'avatar' },
+        success: function (res) {
+          console.log('上传新头像：', res);
           wx.request({
-            url: myurl + '/user/user_info?userID=' + app.globalData.userInfo.ID,
-            success: function (res) {
-              if(res.data.success){
-                app.globalData.userInfo = res.data.data.userInfo[0];
-                that.setData({
-                  userInfo: res.data.data.userInfo[0],
-                  _userInfo: res.data.data.userInfo[0],
-                  introduction: res.data.data.userInfo[0].introduction
-                })
-              }
-            },
+          url: myurl + '/user/updateinfo',
+          data: {
+            userID: app.globalData.userID,
+            _updateData: JSON.stringify({ avatar_url: myurl + JSON.parse(res.data).data})
+          },
+          header: { "Content-Type": "application/x-www-form-urlencoded" },
+          method: 'POST',
+          dataType: 'json',
+          responseType: 'text',
+          success: function (res2) {
+            that.setData({
+              tempImgSrc: myurl + JSON.parse(res.data).data,
+              '_userInfo.avatar_url': myurl + JSON.parse(res.data).data,
+              'userInfo.avatar_url': myurl + JSON.parse(res.data).data,
+              isUpdate: false
+            })
+            app.globalData.userInfo.avatar_url = myurl + JSON.parse(res.data).data;
+          },
           })
-          wx.showToast({
-            title: '信息修改成功！',
-            icon: 'success',
-            duration:2000,
-            mask: true,
-          })
-        }else{
-          wx.showToast({
-            title: '信息修改失败！',
-            icon: 'success',
-            mask: true,
-          })
-        }
-      },
-    })
+        },
+      })
+    }
+    //https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epsxMo5qmngb3ZkrbvQicVIm52NS5I9PJBSGXEichYRXujqiaicXiahxVB7CtKNMKiaC9ehE7lXABNYG90Q/132
+    if (JSON.stringify(obj)!='{}'){
+      wx.request({
+        url: myurl + '/user/updateinfo',
+        data: {
+          userID: app.globalData.userID,
+          _updateData: JSON.stringify(obj)
+        },
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+        method: 'POST',
+        dataType: 'json',
+        responseType: 'text',
+        success: function (res) {
+          console.log('修改信息：', res);
+          if (res.data.success) {
+            that.setData({
+              isUpdate: false
+            })
+            console.log(app.globalData);
+            wx.request({
+              url: myurl + '/user/user_info?userID=' + app.globalData.userInfo.ID,
+              success: function (res) {
+                if (res.data.success) {
+                  app.globalData.userInfo = res.data.data.userInfo[0];
+                  that.setData({
+                    userInfo: res.data.data.userInfo[0],
+                    _userInfo: res.data.data.userInfo[0],
+                    introduction: res.data.data.userInfo[0].introduction
+                  })
+                }
+              },
+            })
+            wx.showToast({
+              title: '信息修改成功！',
+              icon: 'success',
+              duration: 2000,
+              mask: true,
+            })
+          } else {
+            wx.showToast({
+              title: '信息修改失败！',
+              icon: 'success',
+              mask: true,
+            })
+          }
+        },
+      })
+    }
+    
+    
   },
 
   changePicker:function(e){

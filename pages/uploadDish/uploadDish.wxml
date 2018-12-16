@@ -3,7 +3,7 @@
     <view class='topview-left'>
       <view class='dishName'>
         <text decode='true' space='ensp'>菜 品 名：</text>
-        <input bindinput='inputValue' data-type='dishName'></input>
+        <input bindinput='inputValue' data-type='dishName' value='{{dishName}}'></input>
       </view>
       <view class='dishTaste'>
         <text decode='true' space='ensp'>口味：</text>
@@ -39,23 +39,23 @@
       </view>
     </view>
     <view class='topview-right'>
-      <!-- <image bindtap='chooseMainPic' src='{{mainPic!=""?mainPic:"../../images/addPicture.png"}}'></image> -->
+      <image bindtap='chooseMainPic' src='{{mainPic!=""?mainPic:"../../images/addPicture.png"}}'></image>
     </view>
   </view>
 
   <view class='middleView'>
     <view class='features'>
       <text decode='true' space='ensp'>功    效：</text>
-      <input bindinput='inputValue' data-type='features' placeholder='格式：功效1,功效2,...'></input>
+      <input bindinput='inputValue' data-type='features' placeholder='格式：功效1,功效2,...' value='{{features}}'></input>
     </view>
     <view class='time'>
       <view class='prepareT'>
         <text>准备时长：</text>
-        <input bindinput='inputValue' data-type='prepareT'></input>
+        <input bindinput='inputValue' data-type='prepareT' value='{{prepareT}}'></input>
       </view>
       <view class='cookingT'>
         <text>烹饪时长：</text>
-        <input bindinput='inputValue' data-type='cookingT'></input>
+        <input bindinput='inputValue' data-type='cookingT' value='{{cookingT}}'></input>
       </view>
     </view>
     <view class='comp-diff'>
@@ -163,7 +163,7 @@
       </view>
       <view class='stepCtx'>
         <textarea class='step-input step{{index+1}}' value='{{inputListData[index]}}' bindinput='inputValue3' data-idx='{{index}}' name='txt{{index}}'></textarea>
-        <!-- <image name='img{{index}}' data-src='{{imageListSrc[index]}}' bindtap='chooseImage2' class='step-image step-image{{index+1}}' src='{{imageListSrc[index]==""?"../../images/picture.png":imageListSrc[index]}}' data-idx='{{index}}'></image> -->
+        <image name='img{{index}}' data-src='{{imageListSrc[index]}}' bindtap='chooseImage2' class='step-image step-image{{index+1}}' src='{{imageListSrc[index]==""?"../../images/picture.png":imageListSrc[index]}}' data-idx='{{index}}'></image>
         <image class='reduce' src='../../images/reduce.png' bindtap='reduce' data-idx='{{index}}' data-tag='BZ'></image>
       </view>
     </view>
@@ -175,7 +175,7 @@
 
   <view class='descriptionView'>
     <text>菜品说明：</text>
-    <textarea bindinput='inputDescription'></textarea>
+    <textarea bindinput='inputDescription' value='{{description}}'></textarea>
   </view>
 
   <view class='uploadBtn'>

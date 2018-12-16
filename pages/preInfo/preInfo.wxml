@@ -4,7 +4,7 @@
       <text>头像：</text>
       <image src='{{tempImgSrc}}'></image>
     </view>
-    <!-- <text hidden='{{!isUpdate}}' bindtap='changeImg'>更换头像</text> -->
+    <text hidden='{{!isUpdate}}' bindtap='changeImg'>更换头像</text>
   </view>
   <view class='name'>
     <text class='txt1'>昵称：</text>

@@ -18,6 +18,12 @@ Page({
     })
   },
 
+  onShow:function(){
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
+  },
+
   get_user_info: function (e) {
     if(app.globalData.userInfo==null){
       wx.showLoading({

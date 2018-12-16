@@ -23,6 +23,12 @@ Page({
     that.getHistory();
   },
 
+  onShow:function(){
+    if(app.globalData.userInfo!=null && this.data.history.length==0){
+      this.getHistory();
+    }
+  },
+
   inputName:function(e){
     this.setData({
       keyName:e.detail.value
@@ -48,23 +54,25 @@ Page({
             idList.push(res.data.data[i].user_id);
           }
         }
-        wx.request({
-          url: myurl+'/user/userid_list?idList=[' + idList + ']',
-          success: function (res2) { 
-            for (let x = 0; x < res.data.data.length;x++){
-              for(let y=0;y<res2.data.data.length;y++){
-                if (res.data.data[x].user_id == res2.data.data[y].ID){
-                  res.data.data[x].userInfo = res2.data.data[y];
-                  break;
+        if (idList.length>0){
+          wx.request({
+            url: myurl + '/user/userid_list?idList=[' + idList + ']',
+            success: function (res2) {
+              for (let x = 0; x < res.data.data.length; x++) {
+                for (let y = 0; y < res2.data.data.length; y++) {
+                  if (res.data.data[x].user_id == res2.data.data[y].ID) {
+                    res.data.data[x].userInfo = res2.data.data[y];
+                    break;
+                  }
                 }
               }
-            }
-            that.setData({
-              showDishList: (that.data.showDishList).concat(res.data.data),
-              loading: false
-            })
-          },
-        })
+              that.setData({
+                showDishList: (that.data.showDishList).concat(res.data.data),
+                loading: false
+              })
+            },
+          })
+        }
         wx.hideLoading();
       },
     })
@@ -79,7 +87,7 @@ Page({
         wx.hideLoading();
       },
     })
-    if ((that.data.history).indexOf(that.data.keyName)==-1){
+    if ((that.data.history).indexOf(that.data.keyName)==-1 && app.globalData.userInfo!=null){
       wx.request({
         url: myurl + '/operate/add_history?userID=' + app.globalData.userInfo.ID +'&key=' + that.data.keyName,
         success: function (res) {
@@ -96,21 +104,24 @@ Page({
 
   getHistory:function(){
     let that=this;
-    wx.request({
-      url: myurl + '/operate/get_history?userID=' + app.globalData.userInfo.ID,
-      success: function (res) {
-        if(res.data.success){
-          for (let i = 0; i < res.data.data.length; i++) {
-            if ((that.data.history).indexOf(res.data.data[i]._key) == -1) {
-              (that.data.history).push(res.data.data[i]._key);
+    if (app.globalData.userInfo != null){
+      wx.request({
+        url: myurl + '/operate/get_history?userID=' + app.globalData.userInfo.ID,
+        success: function (res) {
+          if (res.data.success) {
+            for (let i = 0; i < res.data.data.length; i++) {
+              if ((that.data.history).indexOf(res.data.data[i]._key) == -1) {
+                (that.data.history).push(res.data.data[i]._key);
+              }
             }
+            that.setData({
+              history: that.data.history
+            })
           }
-          that.setData({
-            history: that.data.history
-          })
-        }
-      },
-    })
+        },
+      })
+    }
+    
   },
 
   clearHistory: function () {
