@@ -160,6 +160,10 @@ Page({
 
   saveInfo:function(){
     let that=this;
+    wx.showLoading({
+      title: '正在修改...',
+      mask: true,
+    })
     let obj={};
     if(that.data.name!=that.data._userInfo.name){
       obj.name=that.data.name;
@@ -224,6 +228,7 @@ Page({
         success: function (res) {
           console.log('修改信息：', res);
           if (res.data.success) {
+            //wx.hideLoading();
             that.setData({
               isUpdate: false
             })
@@ -241,6 +246,7 @@ Page({
                 }
               },
             })
+            wx.hideLoading();
             wx.showToast({
               title: '信息修改成功！',
               icon: 'success',
@@ -248,6 +254,7 @@ Page({
               mask: true,
             })
           } else {
+            wx.hideLoading();
             wx.showToast({
               title: '信息修改失败！',
               icon: 'success',
@@ -256,9 +263,9 @@ Page({
           }
         },
       })
+    }else{
+      wx.hideLoading();
     }
-    
-    
   },
 
   changePicker:function(e){

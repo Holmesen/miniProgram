@@ -106,7 +106,7 @@ Page({
   getRelatedDish:function(){
     let that=this;
     wx.request({
-      url: myurl+'/ingredients/ingred2dish',
+      url: myurl+'/ingredients/ingred2dish?offset=6',
       data: {
         shicai:`[${that.data.info.name}]`
       },

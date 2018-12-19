@@ -1,11 +1,12 @@
 /* pages/me/me.wxss */
 .head-view{
-  height: 400rpx;
+  height: 500rpx;
   width: 100%;
-  background: #ffa55a;
+  /* background: #ffa55a; */
   display: flex;
   flex-flow: column;
   align-content: center;
+  
 }
 .login{
   height: 200rpx;
@@ -13,6 +14,23 @@
   border-radius: 50%;
   line-height: 200rpx;
   margin: auto;
+  opacity: 1;
+  border: solid 2px #bbb;
+  /* position: absolute;
+  top: 100rpx;
+  left: 275rpx; */
+}
+.bg{
+  /* background-image: url('https://www.holmesen.club/images/aa.jpg'); */
+  -webkit-filter: blur(8rpx);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+  height: 500rpx;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
 }
 .info{
   display: flex;
@@ -21,13 +39,14 @@
   height: 100%;
   width: 100%;
   position: relative;
+  opacity: 0.1;
 }
 .info>text{
   font-size:34rpx;
   text-align:center;
   margin:10rpx auto auto auto;
   position:absolute;
-  bottom:30rpx;
+  bottom:70rpx;
   width:100%;
   color: white;
 }
@@ -40,6 +59,7 @@
   flex-flow: column;
   padding: 0 10rpx;
   width: 100%;
+  margin-top: 16rpx;
 }
 .func>view{
   width: 91%;

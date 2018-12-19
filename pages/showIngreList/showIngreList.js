@@ -9,6 +9,7 @@ Page({
     ingreList:[],
     limit:0,
     cate:'',
+    title:'食材',
   },
 
   /**
@@ -17,6 +18,9 @@ Page({
   onLoad: function (options) {
     let that=this;
     that.data.cate=options.tag;
+    that.setData({
+      title:options.type
+    })
     that.getIngreList();
   },
 
@@ -32,12 +36,15 @@ Page({
   getIngreList:function(){
     let that=this;
     wx.request({
-      url: myurl + '/ingredients/subcate_ingred?subcate=' + that.data.cate + '&limit=' + limit,
+      url: myurl + '/ingredients/subcate_ingred?subcate=' + that.data.cate + '&limit=' + that.data.limit,
       success: function (res) {
         console.log(res);
+        for(let i=0;i<res.data.data.length;i++){
+          (that.data.ingreList).push(res.data.data[i]);
+        }
         that.setData({
-          ingreList: res.data.data,
-          limit : that.data.limit+res.data.length
+          ingreList: that.data.ingreList,
+          limit : that.data.limit+res.data.data.length
         })
       },
     })

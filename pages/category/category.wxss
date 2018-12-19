@@ -112,10 +112,10 @@
   display: flex;
   flex-flow: row;
   margin: auto;
-  color: #a78569cb;
+  color: #a78569;
   background-color: white;
   font-size: 26rpx;
-  border: solid 1px #a78569cb;
+  border: solid 1px #a78569;
 }
 .cateIngre>image{
   height: 50rpx;
@@ -139,9 +139,9 @@
   flex-flow: row;
   margin: auto;
   font-size: 26rpx;
-  border: solid 1px #a78569cb;
+  border: solid 1px #a78569;
   color: white;
-  background-color: #a78569cb;
+  background-color: #a78569;
   font-weight: bold;
   /* animation: myfirst 1s; */
   /* animation-direction: reverse; */

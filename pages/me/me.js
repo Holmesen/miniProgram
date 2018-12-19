@@ -25,7 +25,7 @@ Page({
   },
 
   get_user_info: function (e) {
-    if(app.globalData.userInfo==null){
+    if (!app.globalData.userInfo || app.globalData.userInfo==null){
       wx.showLoading({
         title: '登录中...',
       });
@@ -69,7 +69,7 @@ Page({
   },
 
   collectDish:function(){
-    if(app.globalData.userInfo==null){
+    if (!app.globalData.userInfo || app.globalData.userInfo==null){
       wx.showToast({
         title: '请先登录！',
         icon: 'none',
@@ -90,7 +90,7 @@ Page({
   },
 
   manageDish: function () {
-    if (app.globalData.userInfo == null) {
+    if (!app.globalData.userInfo || app.globalData.userInfo == null) {
       wx.showToast({
         title: '请先登录！',
         icon: 'none',
@@ -111,7 +111,7 @@ Page({
   },
 
   personalInfo:function(){
-    if (app.globalData.userInfo == null) {
+    if (!app.globalData.userInfo || app.globalData.userInfo == null) {
       wx.showToast({
         title: '请先登录！',
         icon: 'none',
@@ -139,7 +139,7 @@ Page({
   },
 
   feedback:function(){
-    if (app.globalData.userInfo == null) {
+    if (!app.globalData.userInfo || app.globalData.userInfo == null) {
       wx.showToast({
         title: '请先登录！',
         icon: 'none',

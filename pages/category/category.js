@@ -92,11 +92,11 @@ Page({
     let that=this;
     if (that.data.cateType=='菜系'){
       wx.navigateTo({
-        url: '/pages/showDishList/showDishList?_type=类别&tag=' + e.target.dataset.tag + '&cate=' + that.data.cateType,
+        url: '/pages/showDishList/showDishList?_type=类别&type=' + e.target.dataset.tag +'&tag=' + e.target.dataset.tag + '&cate=' + that.data.cateType,
       })
     }else{
       wx.navigateTo({
-        url: '/pages/showIngreList/showIngreList?_type=类别&tag=' + e.target.dataset.tag + '&cate=' + that.data.cateType,
+        url: '/pages/showIngreList/showIngreList?type=' + e.target.dataset.tag+'&_type=' + that.data.currMenu2+'&tag=' + e.target.dataset.tag + '&cate=' + that.data.cateType,
       })
     }
     

@@ -1,5 +1,5 @@
 <view class='topView'>
-  <image class='dishImg' src='{{mainPic}}'></image>
+  <image class='dishImg' src='{{mainPic||"../../images/noneImage.jpg"}}'></image>
   <text class='dishName'>{{dishName}}</text>
   <view class='num'>
     <view class='viewNum'>

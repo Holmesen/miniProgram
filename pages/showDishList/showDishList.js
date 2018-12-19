@@ -25,7 +25,7 @@ Page({
       
     // }
     that.setData({
-      title: options._type
+      title: options.type
     })
     switch(options._type){
       case '类别':

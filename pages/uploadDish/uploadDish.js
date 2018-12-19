@@ -62,6 +62,10 @@ Page({
     wx.request({
       url: myurl + '/dish/upload_dish',
       data: {
+        user:{
+          id:that.data.userInfo.ID,
+          name:that.data.userInfo.name
+        },
         baseInfo:{
           dishName:that.data.dishName,
           menu: that.data.menu_curr,
@@ -166,6 +170,14 @@ Page({
     //   fail: function(res) {},
     //   complete: function(res) {},
     // })
+  },
+
+  onShow:function(){
+    if(!this.data.userInfo || this.data.userInfo==null){
+      this.setData({
+        userInfo:app.globalData.userInfo
+      })
+    }
   },
 
   selectTaste:function(e){

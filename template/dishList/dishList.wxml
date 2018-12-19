@@ -1,7 +1,7 @@
 <template name='dishList'>
 <view class='dishList'>
   <view class='dish' wx:for='{{showDishList}}'>
-    <image class='dishImg' src='{{item.img_src}}' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='to_dishInfo'></image>
+    <image class='dishImg' src='{{item.img_src||"../../images/noneImage.jpg"}}' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='to_dishInfo'></image>
     <view class='dsihInfo' data-idx='{{index}}' data-id='{{item.ID}}'>
       <text class='infoName' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='to_dishInfo'>{{item.name}}</text>
       <view class='features'>

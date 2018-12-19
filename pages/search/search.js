@@ -37,11 +37,24 @@ Page({
 
   search:function(){
     let that=this;
-    that.searchMethod();
+    if(that.data.keyName==''){
+      wx.showToast({
+        title: '搜索名不能为空哦~',
+        icon: 'none',
+        mask: true,
+      })
+    }else{
+      that.searchMethod();
+    }
+    
   },
 
   searchMethod:function(){
     let that=this;
+    wx.showLoading({
+      title: '查找中...',
+      mask: true,
+    })
     wx.request({
       url: myurl + '/dish/dish_like?key=' + that.data.keyName + '&limit=' + that.data.limit,
       success: function (res) {
@@ -70,6 +83,7 @@ Page({
                 showDishList: (that.data.showDishList).concat(res.data.data),
                 loading: false
               })
+              wx.hideLoading();
             },
           })
         }
@@ -97,9 +111,11 @@ Page({
               history: that.data.history
             })
           }
+          wx.hideLoading();
         },
       })
     }
+    setTimeout(()=>{wx.hideLoading();},5*1000);
   },
 
   getHistory:function(){

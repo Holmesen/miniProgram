@@ -5,7 +5,7 @@
 <view class='view'>
   <view class='dishView' wx:for='{{dishList}}' data-idx='{{index}}' data-id='{{item.ID}}' bindtap='to_dishInfo'>
     <view class='dishImg'>
-      <image src='{{item.img_src}}' data-idx='{{index}}' data-id='{{item.ID}}'></image>
+      <image src='{{item.img_src||"../../images/noneImage.jpg"}}' data-idx='{{index}}' data-id='{{item.ID}}'></image>
       <!-- <view>
         <view>
           <image></image>
