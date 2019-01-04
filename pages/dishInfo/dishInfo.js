@@ -7,8 +7,8 @@ Page({
    */
   data: {
     dishID:'',
-    menu: '',
-    cuisine: '',
+    menu: '菜系',
+    cuisine: '类别',
     taste: '',
     mainPic: '',
     dishName: '',
@@ -134,7 +134,7 @@ Page({
           date: objData[0].date,
           dishData: objData[0],
         })
-        that.getSameDish(objData[0].menu, objData[0].cuisine);
+        that.getSameDish(that.data.menu, that.data.cuisine);
       },
     })
   },
@@ -145,6 +145,12 @@ Page({
 
   getSameDish:function(menu,cuisine){
     let that=this;
+    if(menu==''){
+      menu='菜系';
+    }
+    if(cuisine==''){
+      cuisine='类别';
+    }
     wx.request({
       url: myurl+'/dish/same_menu_cuisine?menu='+menu+'&cuisine='+cuisine+'&limit=0&offset=6',
       data: '',

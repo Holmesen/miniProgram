@@ -1,6 +1,6 @@
 <view>
   <view class='head-view'>
-    <view class='bg' style='background-repeat: round;background-image: url("{{userInfo.avatarUrl||userInfo.avatar_url}}"); background-color:#ffa55a;'></view>
+    <view class='bg' style='background-repeat: round; background-color:#ffa55a;'></view>
     <button wx:if="{{userInfo==null}}" class='login' open-type='getUserInfo' bindgetuserinfo='get_user_info'>登录</button>
     <view class='info' hidden="{{userInfo==null}}" style='opacity: 1;'>
       <image class='login' src='{{userInfo.avatarUrl||userInfo.avatar_url}}'></image>

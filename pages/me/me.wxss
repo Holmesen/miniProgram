@@ -22,11 +22,11 @@
 }
 .bg{
   /* background-image: url('https://www.holmesen.club/images/aa.jpg'); */
-  -webkit-filter: blur(8rpx);
+  /* -webkit-filter: blur(8rpx);
   -moz-filter: blur(8px);
   -o-filter: blur(8px);
   -ms-filter: blur(8px);
-  filter: blur(8px);
+  filter: blur(8px); */
   height: 500rpx;
   width: 100%;
   position: fixed;

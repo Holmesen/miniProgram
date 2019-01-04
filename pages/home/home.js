@@ -90,7 +90,7 @@ Page({
     that.getRandomCuisineDish2();
     
     //that.getRecommend();
-    setTimeout(()=>{wx.hideLoading();},2*1000);
+    //setTimeout(()=>{wx.hideLoading();},2*1000);
   },
 
   to_showDishList:function(e){
@@ -211,6 +211,7 @@ Page({
         that.setData({
           newDish: res.data.data
         })
+        wx.hideLoading();
       },
     })
   },
@@ -320,7 +321,7 @@ Page({
     let that = this;
     wx.setStorageSync('showDishList', that.data.xiaochiDish)
     wx.navigateTo({
-      url: '/pages/showDishList/showDishList?_type=' + that.data.randomCuisine2,
+      url: '/pages/showDishList/showDishList?_type=' + that.data.randomCuisine2 + '&type=' + that.data.randomCuisine2,
     })
   },
 
@@ -336,7 +337,7 @@ Page({
     if (app.globalData.userInfo && app.globalData.userInfo!=null){
       //wx.setStorageSync('showDishList', that.data.recommendDish)
       wx.navigateTo({
-        url: '/pages/showDishList/showDishList?_type=菜品推荐',
+        url: '/pages/showDishList/showDishList?_type=菜品推荐&type=菜品推荐',
       })
     }else{
       wx.showToast({
